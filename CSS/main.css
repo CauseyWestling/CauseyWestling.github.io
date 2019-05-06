@@ -1,0 +1,134 @@
+/* Nav */
+.nav-img {
+      max-height: 40px;
+  }
+
+/* Header */
+  header {
+    position: relative;
+    background-color: black;
+    height: 75vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  }
+  
+  header .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+  }
+  /* Switch header video to image on phones and tablets */
+  @media (pointer: coarse) and (hover: none) {
+    header {
+      background: url("../img/1.jpg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+    header video {
+      display: none;
+    }
+
+  }
+  
+/* HR */
+  .title-hr hr {
+    display: inline-block;
+    width: 12%;
+    margin: 10px 20px;
+    border-top: 3px solid #4285f4;
+  }
+  .contact-hr hr{
+    border-top: 3px solid #4285f4;
+    width: 20%;
+  }
+  
+/* Color */
+  .color-primery{
+    /* color: rgb(43, 116, 211) */
+    color: #4285f4;
+  }
+
+  .bg-card1{
+    background-color: rgb(43, 116, 211);
+  }
+
+  .bg-card2{
+    background-color: rgb(36, 109, 204);
+
+  }
+
+  .bg-card3{
+      background-color: rgba(38, 108, 199, 0.911);
+  }
+  .bg-card4{
+      background-color: rgba(22, 91, 219, 0.904)
+  }
+
+/* x-Small devices (small phones)*/
+@media (max-width: 350px) { 
+  header {
+    height: 85vh;
+  }
+ }
+
+/* Small devices (phones)*/
+@media (max-width: 576px) { 
+    h2{
+        font-size: 20px;
+    }
+    h1{
+      font-size: 30px;
+   }
+   .title-hr hr {
+    width: 7%;
+    margin: 10px 10px;
+  }
+  
+ }
+
+/* Medium devices (tablets, 768px and up) */
+/* @media (max-width: 768px) { 
+    
+ } */
+
+/* Large devices (desktops, 992px and up) */
+/* @media (max-width: 992px) { 
+    header {
+        background: url("../img/1.jpg") black no-repeat  cover scroll;
+      }
+      header video {
+        display: none;
+      }
+} */
+
+/* Extra large devices (large desktops, 1200px and up) */
+/* @media (min-width: 1200px) { 
+
+ } */
