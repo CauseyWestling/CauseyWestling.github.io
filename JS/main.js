@@ -31,3 +31,24 @@ new WOW().init();
   $('.navbar-nav>li>a').on('click', function(){
     $('.navbar-collapse').collapse('hide');
   });
+
+
+// Active nav
+  $(window).scroll(function() {
+		var scrollDistance = $(window).scrollTop();
+
+		// Show/hide menu on scroll
+		//if (scrollDistance >= 850) {
+		//		$('nav').fadeIn("fast");
+		//} else {
+		//		$('nav').fadeOut("fast");
+		//}
+	
+		// Assign active class to nav links while scolling
+		$('.page-section').each(function(i) {
+				if ($(this).position().top <= scrollDistance) {
+						$('.navbar-nav a.active').removeClass('active');
+						$('.navbar-nav a').eq(i).addClass('active');
+				}
+		});
+}).scroll();
