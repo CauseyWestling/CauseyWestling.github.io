@@ -1,3 +1,8 @@
+/*
+  All primary color #4285f4 has been changed to #5aa8ea in mdb.min.css
+*/
+
+
 /* Nav */
 .nav-img {
       max-height: 40px;
@@ -5,7 +10,7 @@
 
 .active {
     background-color: rgba(255, 255, 255, 0.144);
-    border-bottom: 3px solid #4285f4;
+    border-bottom: 3px solid #5aa8ea;
 }
 
 .btn-outline-primary:hover{
@@ -70,34 +75,26 @@
     display: inline-block;
     width: 12%;
     margin: 10px 20px;
-    border-top: 3px solid #4285f4;
+    border-top: 3px solid #5aa8ea;
   }
   .contact-hr hr{
-    border-top: 3px solid #4285f4;
+    border-top: 3px solid #5aa8ea;
     width: 20%;
   }
   
 /* Color */
   .color-primery{
     /* color: rgb(43, 116, 211) */
-    color: #4285f4;
+    color: #5aa8ea;
   }
 
-  .bg-card1{
-    background-color: rgb(43, 116, 211);
-  }
-
-  .bg-card2{
-    background-color: rgb(36, 109, 204);
-
-  }
-
-  .bg-card3{
-      background-color: rgba(38, 108, 199, 0.911);
-  }
-  .bg-card4{
-      background-color: rgba(22, 91, 219, 0.904)
-  }
+/* a */
+a{
+  color: #5aa8ea;
+}
+a:hover{
+  color: #0d47a1;
+}
 
 /* x-Small devices (small phones)*/
 @media (max-width: 350px) { 
