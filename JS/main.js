@@ -35,7 +35,7 @@ new WOW().init();
 
 // Active nav
   $(window).scroll(function() {
-		var scrollDistance = $(window).scrollTop();
+		var scrollDistance = $(window).scrollTop() + 100;
 
 		// Show/hide menu on scroll
 		//if (scrollDistance >= 850) {
