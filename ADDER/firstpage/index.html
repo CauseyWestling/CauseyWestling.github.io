@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="ADDER Navbar">
+    <meta name="author" content="CAUSEYWESTLING">
+    <title>ADDER</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- CSS -->
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+  <iframe src="nav.html" width="100%" height="63px" style="border:none;"></iframe>
+      
+      <div id="wrapper">
+        <div class="content-area">
+          <div class="container-fluid">
+            <div class="text-right mt-3 mb-3 d-fixed">
+              
+            </div>
+            <div class="main">
+              <div class="row sparkboxes mt-4">
+                <div class="col-md-3">
+                  <div class="box box1 h-100">                   
+                    <h2 class="ml-3 mt-4 pt-3 text-white align-middle">Trophi</h3>                   
+                    <!-- <div id="spark1"></div> -->
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="box box2">
+                    <div class="details">
+                      <h3 class="value" akhi="15">0</h3>
+                      <h4>Företag</h4>
+                    </div>
+                    <div id="spark2"></div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="box box3">
+                    <div class="details">
+                      <h3 class="value" akhi="24">0</h3>
+                      <h4>Fastigheter</h4>
+                    </div>
+                    <div id="spark3"></div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="box box4">
+                    <div class="details">
+                      <h3 class="value" akhi="30">0</h3>
+                      <h4>Projekt</h4>
+                    </div>
+                    <div id="spark4"></div>
+                  </div>
+                </div>               
+              </div>
+              <div class="row mt-4 mb-5">
+                <div class="col-md-12">
+                  <div class="box h-100 mt-4">
+                    <div class=" text-white col-md-2">
+                      <h3>137 835 627</h3>
+                      <h4 class="pb-4">Projektsumma</h4>
+                    </div>                  
+                    <div class="col-md-10" id="spark1"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row mt-4">
+                <div class="col-md-5">
+                  <div class="box shadow mt-4">
+                    <p class="text-white m-0">Klassificering</p>
+                    <div id="radialBarBottom" class=""></div>
+                    <div style="height: 16px;"></div>
+                  </div>
+                </div>
+                <div class="col-md-7">
+                  <div class="box shadow mt-4">
+                    <p class="text-white m-0">Avskrivning</p>
+                    <div id="line-adwords"></div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row mt-4">
+                <div class="col-md-5">
+                  <div class="box shadow mt-4">
+                    <p class="text-white m-0">K3</p>
+                    <!-- <div id="barchart"></div> -->
+                    <div class="mt-3">
+                      <div id="progress1"></div>
+                    </div>
+                    <div class="mt-2">
+                      <div id="progress2"></div>
+                    </div>
+                    <div class="mt-2">
+                      <div id="progress3"></div>
+                    </div>
+                    <div class="mt-2">
+                      <div id="progress4"></div>
+                    </div>
+                    <div class="mt-2">
+                      <div id="progress5"></div>
+                    </div>
+                    <div style="height: 15px;"></div>
+                  </div>
+                </div>
+                <div class="col-md-7">
+                  <div class="box shadow mt-4">
+                    <p class="text-white m-0">Total per del</p>
+                    <div id="areachart"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="height: 40px;"></div>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>   
+      <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> 
+      <script>
+          const counters = document.querySelectorAll('.value');
+          const speed = 2000;
+
+          counters.forEach( counter => {
+            const animate = () => {
+                const value = +counter.getAttribute('akhi');
+                const data = +counter.innerText;
+              
+                const time = value / speed;
+              if(data < value) {
+                    counter.innerText = Math.ceil(data + time);
+                    setTimeout(animate, 40);
+                  }else{
+                    counter.innerText = value;
+                  }              
+            }           
+            animate();
+          });
+        
+
+
+
+
+        window.Apex = {
+  chart: {
+    foreColor: '#ccc',
+    toolbar: {
+      show: false
+    },
+  },
+  stroke: {
+    width: 3
+  },
+  dataLabels: {
+    enabled: false
+  },
+  tooltip: {
+    theme: 'dark'
+  },
+  grid: {
+    borderColor: "#535A6C",
+    xaxis: {
+      lines: {
+        show: true
+      }
+    }
+  }
+};
+
+var optionsProgress1 = {
+  chart: {
+    id: '2022',
+    height: 70,
+    type: "bar",
+    stacked: true,
+    sparkline: {
+      enabled: true
+    }
+  },
+  plotOptions: {
+    bar: {
+      horizontal: true,
+      barHeight: "20%",
+      colors: {
+        backgroundBarColors: ["#033135"]
+      }
+    }
+  },
+  stroke: {
+    width: 0
+  },
+  series: [
+    {
+      name: "2022",
+      data: [30]
+    }
+  ],
+  title: {
+    floating: true,
+    offsetX: -10,
+    offsetY: 5,
+    text: "2022",
+    style: {
+      fontSize: "14px",
+      fontWeight: 200,
+      fontFamily:  'Montserrat',
+    }
+  },
+  subtitle: {
+    floating: true,
+    align: "right",
+    offsetY: 5,
+    text: "30%",
+    style: {
+      fontSize: "14px",
+      fontWeight: 200,
+      fontFamily:  'Montserrat',
+    }
+  },
+  tooltip: {
+    enabled: false
+  },
+  xaxis: {
+    categories: ["Process 1"]
+  },
+  yaxis: {
+    max: 100
+  },
+  fill: {
+    colors: ["#FFA792"]
+  }
+};
+
+var chartProgress1 = new ApexCharts(
+  document.querySelector("#progress1"),
+  optionsProgress1
+);
+chartProgress1.render();
+
+var optionsProgress2 = {
+  chart: {
+    id: '2021',
+    height: 70,
+    type: "bar",
+    stacked: true,
+    sparkline: {
+      enabled: true
+    }
+  },
+  plotOptions: {
+    bar: {
+      horizontal: true,
+      barHeight: "20%",
+      colors: {
+        backgroundBarColors: ["#033135"]
+      }
+    }
+  },
+  stroke: {
+    width: 0
+  },
+  series: [
+    {
+      name: "2021",
+      data: [47]
+    }
+  ],
+  title: {
+    floating: true,
+    offsetX: -10,
+    offsetY: 5,
+    text: "2021",
+    style: {
+      fontSize: "14px",
+      fontWeight: 200,
+      fontFamily:  'Montserrat',
+    }
+  },
+  subtitle: {
+    floating: true,
+    align: "right",
+    offsetY: 5,
+    text: "47%",
+    style: {
+      fontSize: "14px",
+      fontWeight: 200,
+      fontFamily:  'Montserrat',
+    }
+  },
+  tooltip: {
+    enabled: false
+  },
+  xaxis: {
+    categories: ["2021"]
+  },
+  yaxis: {
+    max: 100
+  },
+  fill: {
+    colors: ["#FFA792"]
+  }
+};
+
+var chartProgress2 = new ApexCharts(
+  document.querySelector("#progress2"),
+  optionsProgress2
+);
+chartProgress2.render();
+
+var optionsProgress3 = {
+  chart: {
+    id: 'progress2',
+    height: 70,
+    type: "bar",
+    stacked: true,
+    sparkline: {
+      enabled: true
+    }
+  },
+  plotOptions: {
+    bar: {
+      horizontal: true,
+      barHeight: "20%",
+      colors: {
+        backgroundBarColors: ["#033135"]
+      }
+    }
+  },
+  stroke: {
+    width: 0
+  },
+  series: [
+    {
+      name: "2020",
+      data: [34]
+    }
+  ],
+  title: {
+    floating: true,
+    offsetX: -10,
+    offsetY: 5,
+    text: "2020",
+    style: {
+      fontSize: "14px",
+      fontWeight: 200,
+      fontFamily:  'Montserrat',
+    }
+  },
+  subtitle: {
+    floating: true,
+    align: "right",
+    offsetY: 5,
+    text: "34%",
+    style: {
+      fontSize: "14px",
+      fontWeight: 200,
+      fontFamily:  'Montserrat',
+    }
+  },
+  tooltip: {
+    enabled: false
+  },
+  xaxis: {
+    categories: ["2020"]
+  },
+  yaxis: {
+    max: 100
+  },
+  fill: {
+    colors: ["#FFA792"]
+  }
+};
+
+var chartProgress3 = new ApexCharts(
+  document.querySelector("#progress3"),
+  optionsProgress3
+);
+chartProgress3.render();
+
+var optionsProgress4 = {
+  chart: {
+    id: 'progress4',
+    height: 70,
+    type: "bar",
+    stacked: true,
+    sparkline: {
+      enabled: true
+    }
+  },
+  plotOptions: {
+    bar: {
+      horizontal: true,
+      barHeight: "20%",
+      colors: {
+        backgroundBarColors: ["#033135"]
+      }
+    }
+  },
+  stroke: {
+    width: 0
+  },
+  series: [
+    {
+      name: "2019",
+      data: [30]
+    }
+  ],
+  title: {
+    floating: true,
+    offsetX: -10,
+    offsetY: 5,
+    text: "2019",
+    style: {
+      fontSize: "14px",
+      fontWeight: 200,
+      fontFamily:  'Montserrat',
+    }
+  },
+  subtitle: {
+    floating: true,
+    align: "right",
+    offsetY: 5,
+    text: "30%",
+    style: {
+      fontSize: "14px",
+      fontWeight: 200,
+      fontFamily:  'Montserrat',
+    }
+  },
+  tooltip: {
+    enabled: false
+  },
+  xaxis: {
+    categories: ["2019"]
+  },
+  yaxis: {
+    max: 100
+  },
+  fill: {
+    colors: ["#FFA792"]
+  }
+};
+
+var chartProgress4 = new ApexCharts(
+  document.querySelector("#progress4"),
+  optionsProgress4
+);
+chartProgress4.render();
+
+var optionsProgress5 = {
+  chart: {
+    id: 'progress5',
+    height: 70,
+    type: "bar",
+    stacked: true,
+    sparkline: {
+      enabled: true
+    }
+  },
+  plotOptions: {
+    bar: {
+      horizontal: true,
+      barHeight: "20%",
+      colors: {
+        backgroundBarColors: ["#033135"]
+      }
+    }
+  },
+  stroke: {
+    width: 0
+  },
+  series: [
+    {
+      name: "2018",
+      data: [44]
+    }
+  ],
+  title: {
+    floating: true,
+    offsetX: -10,
+    offsetY: 5,
+    text: "2018",
+    style: {
+      fontSize: "14px",
+      fontWeight: 200,
+      fontFamily:  'Montserrat',
+    }
+  },
+  subtitle: {
+    floating: true,
+    align: "right",
+    offsetY: 5,
+    text: "44%",
+    style: {
+      fontSize: "14px",
+      fontWeight: 200,
+      fontFamily:  'Montserrat',
+    }
+  },
+  tooltip: {
+    enabled: false
+  },
+  xaxis: {
+    categories: ["2018"]
+  },
+  yaxis: {
+    max: 100
+  },
+  fill: {
+    colors: ["#FFA792"]
+  }
+};
+
+var chartProgress5 = new ApexCharts(
+  document.querySelector("#progress5"),
+  optionsProgress5
+);
+chartProgress5.render();
+
+var spark1 = {
+  chart: {
+    id: 'spark1',
+    group: 'sparks',
+    type: 'line',
+    height: 80,
+    sparkline: {
+      enabled: true
+    },
+    dropShadow: {
+      enabled: true,
+      top: 1,
+      left: 1,
+      blur: 2,
+      opacity: 0.2,
+    }
+  },
+  series: [{
+    data: [97835627, 8835627, 107835627, 17835627, 120835627, 27835627, 140835627, 25835627, 17835627, 137835627]
+  }],
+  stroke: {
+    curve: 'smooth'
+  },
+  
+  grid: {
+    padding: {
+      top: 20,
+      bottom: 10,
+      left: 50
+    }
+  },
+  markers: {
+    size: 0
+  },
+  colors: ['#C1EAE3'],
+  tooltip: {
+    x: {
+      show: false
+    },
+    y: {
+      title: {
+        formatter: function formatter(val) {
+          return '';
+        }
+      }
+    }
+  }
+}
+
+var spark2 = {
+  chart: {
+    id: 'spark2',
+    group: 'sparks',
+    type: 'line',
+    height: 80,
+    sparkline: {
+      enabled: true
+    },
+    dropShadow: {
+      enabled: true,
+      top: 1,
+      left: 1,
+      blur: 2,
+      opacity: 0.2,
+    }
+  },
+  series: [{
+    data: [12, 14, 2, 47, 32, 44, 14, 55, 41, 69]
+  }],
+  stroke: {
+    curve: 'smooth'
+  },
+  grid: {
+    padding: {
+      top: 20,
+      bottom: 10,
+      left: 110
+    }
+  },
+  markers: {
+    size: 0
+  },
+  colors: ['#C1EAE3'],
+  tooltip: {
+    x: {
+      show: false
+    },
+    y: {
+      title: {
+        formatter: function formatter(val) {
+          return '';
+        }
+      }
+    }
+  }
+}
+
+var spark3 = {
+  chart: {
+    id: 'spark3',
+    group: 'sparks',
+    type: 'line',
+    height: 80,
+    sparkline: {
+      enabled: true
+    },
+    dropShadow: {
+      enabled: true,
+      top: 1,
+      left: 1,
+      blur: 2,
+      opacity: 0.2,
+    }
+  },
+  series: [{
+    data: [47, 45, 74, 32, 56, 31, 44, 33, 45, 19]
+  }],
+  stroke: {
+    curve: 'smooth'
+  },
+  markers: {
+    size: 0
+  },
+  grid: {
+    padding: {
+      top: 20,
+      bottom: 10,
+      left: 110
+    }
+  },
+  colors: ['#C1EAE3'],
+  xaxis: {
+    crosshairs: {
+      width: 1
+    },
+  },
+  tooltip: {
+    x: {
+      show: false
+    },
+    y: {
+      title: {
+        formatter: function formatter(val) {
+          return '';
+        }
+      }
+    }
+  }
+}
+
+var spark4 = {
+  chart: {
+    id: 'spark4',
+    group: 'sparks',
+    type: 'line',
+    height: 80,
+    sparkline: {
+      enabled: true
+    },
+    dropShadow: {
+      enabled: true,
+      top: 1,
+      left: 1,
+      blur: 2,
+      opacity: 0.2,
+    }
+  },
+  series: [{
+    data: [15, 75, 47, 65, 14, 32, 19, 54, 44, 61]
+  }],
+  stroke: {
+    curve: 'smooth'
+  },
+  markers: {
+    size: 0
+  },
+  grid: {
+    padding: {
+      top: 20,
+      bottom: 10,
+      left: 110
+    }
+  },
+  colors: ['#C1EAE3'],
+  xaxis: {
+    crosshairs: {
+      width: 1
+    },
+  },
+  tooltip: {
+    x: {
+      show: false
+    },
+    y: {
+      title: {
+        formatter: function formatter(val) {
+          return '';
+        }
+      }
+    }
+  }
+}
+
+new ApexCharts(document.querySelector("#spark1"), spark1).render();
+new ApexCharts(document.querySelector("#spark2"), spark2).render();
+new ApexCharts(document.querySelector("#spark3"), spark3).render();
+new ApexCharts(document.querySelector("#spark4"), spark4).render();
+
+
+var optionsLine = {
+  chart: {
+    height: 328,
+    type: 'line',
+    zoom: {
+      enabled: false
+    },
+    dropShadow: {
+      enabled: false,
+      top: 3,
+      left: 2,
+      blur: 4,
+      opacity: 1,
+    }
+  },
+  stroke: {
+    curve: 'smooth',
+    width: 3
+  },
+  //colors: ["#3F51B5", '#2196F3'],
+  series: [{
+      name: "test",
+      data: [1, 15, 26, 20, 33, 27]
+    },
+    {
+      name: "test2",
+      data: [3, 33, 21, 42, 19, 32]
+    },
+    {
+      name: "test3",
+      data: [0, 39, 52, 11, 29, 43]
+    }
+  ],
+  subtitle: {
+    text: 'NVP',
+    offsetY: 15,
+    offsetX: 10
+  },
+  markers: {
+    strokeWidth: 0,
+    hover: {
+      size: 4
+    }
+  },
+  grid: {
+    show: false,
+    padding: {
+      bottom: 0
+    }
+  },
+  labels: ['2017', '2018', '2019', '2020', '2021', '2022'],
+  colors:['#C1EAE3', '#FFA792', '#033135'],
+  xaxis: {
+    tooltip: {
+      enabled: false
+    }
+  },
+  legend: {
+    position: 'top',
+    horizontalAlign: 'right',
+    offsetY: -20
+  }
+}
+
+var chartLine = new ApexCharts(document.querySelector('#line-adwords'), optionsLine);
+chartLine.render();
+
+var optionsCircle4 = {
+  chart: {
+    type: 'donut',
+    height: 350,
+    width: 420,
+  },
+  plotOptions: {
+    donut: {
+      size: undefined,
+      inverseOrder: true,
+      hollow: {
+        margin: 5,
+        size: '35%',
+        background: 'transparent',       
+      },
+      track: {
+        show: false,
+      },
+      startAngle: -180,
+      endAngle: 180
+    },
+  },
+  stroke: {
+    lineCap: 'round',
+    colors: 'transparent',
+  },
+  series: [30, 40, 10, 20],
+  labels: ['BI', 'B', 'RR', 'URB'],
+  legend: {
+    show: true,
+    floating: true,
+    position: 'right',
+    offsetX: -30,
+    offsetY: 210    
+  },
+  
+  colors:['#C1EAE3', '#FFA792', '#033135', '#ffffff2c']
+}
+
+var chartCircle4 = new ApexCharts(document.querySelector('#radialBarBottom'), optionsCircle4);
+chartCircle4.render();
+
+
+var optionsBar = {
+  chart: {
+    height: 380,
+    type: 'bar',
+    stacked: true,
+  },
+  plotOptions: {
+    bar: {
+      columnWidth: '30%',
+      horizontal: false,
+    },
+  },
+  series: [{
+    name: 'PRODUCT A',
+    data: [14, 25, 21, 17, 12, 13, 11, 19]
+  }, {
+    name: 'PRODUCT B',
+    data: [13, 23, 20, 8, 13, 27, 33, 12]
+  }, {
+    name: 'PRODUCT C',
+    data: [11, 17, 15, 15, 21, 14, 15, 13]
+  }],
+  xaxis: {
+    categories: ['2018', '2019', '2020', '2021', '2022'],
+  },
+  fill: {
+    opacity: 1
+  },
+
+}
+
+var chartBar = new ApexCharts(
+  document.querySelector("#barchart"),
+  optionsBar
+);
+
+chartBar.render();
+
+var optionsArea = {
+  chart: {
+    height: 380,
+    type: 'area',
+    stacked: false,
+  },
+  stroke: {
+    curve: "smooth",
+    width: 2
+  },
+  series: [{
+      name: "BI",
+      data: [11, 15, 26, 20, 33]
+    },
+    {
+      name: "URB",
+      data: [32, 33, 21, 42, 19]
+    },
+    {
+      name: "B",
+      data: [20, 39, 52, 11, 29]
+    },
+    {
+      name: "MA",
+      data: [10, 05, 60, 10, 39]
+    }
+  ],
+  colors:['#C1EAE3', '#FFA792', '#033135', '#ffffff2c'],
+  xaxis: {
+    categories: ['2018', '2019', '2020', '2021', '2022'],
+  },
+  tooltip: {
+    followCursor: true
+  },
+  fill: {
+    opacity: 1,
+  },
+
+}
+
+var chartArea = new ApexCharts(
+  document.querySelector("#areachart"),
+  optionsArea
+);
+
+chartArea.render();
+      </script>
+</body>
+</html>
