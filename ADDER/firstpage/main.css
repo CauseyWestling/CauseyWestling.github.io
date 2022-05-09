@@ -63,3 +63,150 @@ body {
   .sparkboxes .box4 {
     background-image: linear-gradient( 135deg, #EE9AE5 10%, #5961F9 100%);
   } */
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    /* background-color: #033135; */
+    background-color: #C1EAE3;
+    overflow-x: hidden;
+    transition: 0.5s;
+    /* border-left: 3px solid #FFA792 ; */
+    /* box-shadow: 0 0 3px #C1EAE3, 0 0 5px #C1EAE3; */
+  }
+  
+  
+  .sidenav .closebtn:hover {
+    color: #04292c4d;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    font-size: 36px;
+    padding-left: 8px;
+    text-decoration: none;
+    /* font-size: 25px; */
+    color: #04292c;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  .live-search-list {
+    font-size: 1rem !important;
+    width: 230px;
+    margin-left: 10px;
+  }
+  .live-search-box{
+    font-size: 1rem !important;
+    width: 230px;
+    margin-left: 10px;
+    margin-bottom: 8px;
+    background-color: #04292c;
+    border: none;
+  }
+  .list-group-item{
+    background-color: #04292c;
+    color: #C1EAE3;
+    margin-bottom: 1px;
+    border: none;
+    /* border: 1px solid #C1EAE3; */
+  }
+  .list-group-item:hover{
+    cursor: pointer;
+    background-color: #04292cbb;
+  }
+
+  .svg{
+    position: absolute;
+  } 
+  .svg-div{
+    
+    margin-left: 57%;
+  }
+
+  #progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+  }
+  #progressbar li {
+    list-style-type: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 33.33%;
+    float: left;
+    position: relative;
+  }
+  #progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 20px;
+    line-height: 20px;
+    display: block;
+    font-size: 10px;
+    color: #333;
+    background: white;
+    border-radius: 3px;
+    margin: 0 auto 5px auto;
+  }
+  /*progressbar connectors*/
+  #progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: -1; /*put it behind the numbers*/
+  }
+  #progressbar li:first-child:after {
+    /*connector not needed before the first step*/
+    content: none; 
+  }
+  /*marking active/completed steps green*/
+  /*The number of the step and the connector before it = green*/
+  #progressbar li.active:before,  #progressbar li.active:after{
+    background: #033135;
+    color: white;
+  }
+  .tab-group {
+    list-style:none;
+    padding:0;
+    margin:0 0 40px 0;
+    
+    }
+      
+    .tab-group li a {
+      display:block;
+      text-decoration:none;
+      padding:10px;
+      background:#04292c;
+      color:gray;
+      font-size:12px;
+      float:left;
+      width:50%;
+      text-align:center;
+      cursor:pointer;
+      transition:.5s ease;
+      
+    }
+    .tab-group li a:hover {
+      background:#073f42;
+      color: #fff;
+    }
+    .tab-group .active a {
+      background: #C1EAE3;
+      color: #033135;
+    }
+  

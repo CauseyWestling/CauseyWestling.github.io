@@ -1,0 +1,78 @@
+/*
+  All primary color #4285f4 has been changed to #5aa8ea in mdb.min.css
+*/
+.bg-img{
+  position: fixed;
+  z-index: -2;
+  height: 100%;
+  right: 0;
+  bottom: 0;
+}
+body{
+  background-color: #033135;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 95%;
+}
+.container{
+  background-color: #fff;
+  border-radius: 5px;
+}
+.black {
+  background-color: #033135 !important;
+  color: #C1EAE3 !important;
+}
+
+.btn-download {
+  align-items: center;
+  padding: 0 2rem;
+  height: 45px;
+  background: #ffa792;
+  color: #fff;
+  font-family: titillium,sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  border: 0;
+  border-radius: 3%/50%;
+  line-height: 1em;
+  white-space: nowrap;
+  cursor: pointer;
+}
+  .btn-download:hover {
+      background: #DF9280;
+  }
+
+
+  .btn-toggle{
+    border: 3px solid #1a1a1a;
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    transition: background 600ms ease, color 600ms ease;
+}
+.pagination .page-item .page-link:hover{
+  background-color: rgba(255, 255, 255, 0.24) !important;
+}
+.pagination .page-item.active .page-link{
+  background-color: #C1EAE3 !important;
+  color: #033135 !important;
+}
+.pagination .page-item .page-link{
+  background-color: rgba(255, 255, 255, 0.11) !important;
+  color: #C1EAE3 !important;
+}
+  
+h2{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+}
+h3{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+  font-size: 18px;
+}
+.form-control:focus{
+  border-color: #033135 !important;
+  box-shadow: 0 0 0 0.2rem #03313534;
+}
+label{
+  font-weight: bold;
+}

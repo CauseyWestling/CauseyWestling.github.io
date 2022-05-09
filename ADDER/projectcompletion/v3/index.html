@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+  
+  <html lang="sv">
+  <head>
+      <meta name="viewport" content="width=device-width" />
+      <title>Projektavslut</title>
+      
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+      <link href="Tools/mdb/mdb.min.css" rel="stylesheet">
+  
+      <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  </head>
+  <body>
+      <style>
+          .bg-img {
+              position: fixed;
+              z-index: -2;
+              height: 100%;
+              right: 0;
+              bottom: 0;
+          }
+  
+          body {
+              background-color: #033135;
+              font-family: Verdana, Geneva, Tahoma, sans-serif;
+              font-size: 95%;
+          }
+  
+          input {
+              font-size: .75rem !important;
+          }
+  
+          textarea {
+              font-size: .75rem !important;
+          }
+  
+          .input-group-text {
+              font-size: .75rem !important;
+          }
+  
+          th {
+              font-size: .75rem !important;
+          }
+  
+          td {
+              font-size: .75rem !important;
+          }
+  
+          custom-control-label {
+              font-size: .75rem !important;
+          }
+  
+          .container {
+              background-color: #fff;
+              border-radius: 5px;
+          }
+  
+          .black {
+              background-color: #033135 !important;
+              color: #C1EAE3 !important;
+          }
+  
+          .btn-download {
+              align-items: center;
+              padding: 0 2rem;
+              height: 45px;
+              background: #ffa792;
+              color: #fff;
+              font-family: titillium,sans-serif;
+              font-weight: 700;
+              text-decoration: none;
+              border: 0;
+              border-radius: 3%/50%;
+              line-height: 1em;
+              white-space: nowrap;
+              cursor: pointer;
+          }
+  
+              .btn-download:hover {
+                  background: #DF9280;
+              }
+  
+  
+          .btn-toggle {
+              border: 3px solid #1a1a1a;
+              display: inline-block;
+              padding: 10px;
+              position: relative;
+              text-align: center;
+              transition: background 600ms ease, color 600ms ease;
+          }
+  
+          .pagination .page-item .page-link:hover {
+              background-color: rgba(255, 255, 255, 0.24) !important;
+          }
+  
+          .pagination .page-item.active .page-link {
+              background-color: #C1EAE3 !important;
+              color: #033135 !important;
+          }
+  
+          .pagination .page-item .page-link {
+              background-color: rgba(255, 255, 255, 0.11) !important;
+              color: #C1EAE3 !important;
+          }
+  
+          h2 {
+              font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+              font-size: 1.7rem !important;
+          }
+  
+          h3 {
+              font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+              font-size: 0.96rem !important;
+          }
+  
+          .form-control:focus {
+              border-color: #033135 !important;
+              box-shadow: 0 0 0 0.2rem #03313534;
+          }
+  
+          .form-control-file {
+              position: relative;
+              width: 100%;
+              height: 100%;
+              min-height: 9em;
+              outline: none;
+              visibility: hidden;
+              cursor: pointer;
+              background-color: #c61c23;
+              box-shadow: 0 0 5px solid currentColor;
+          }
+  
+              .form-control-file:before {
+                  content: attr(data-title);
+                  position: absolute;
+                  top: 0.5em;
+                  left: 0;
+                  width: 100%;
+                  min-height: 9em;
+                  line-height: 2em;
+                  padding-top: 3em;
+                  opacity: 1;
+                  visibility: visible;
+                  text-align: center;
+                  border: 0.25em dashed currentColor;
+                  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+                  overflow: hidden;
+              }
+  
+          .text-primary {
+              color: #033135 !important;
+          }
+  
+          .btn-cw {
+              color: #C1EAE3 !important;
+              background-color: #033135 !important;
+          }
+  
+              .btn-cw:hover {
+                  color: #C1EAE3 !important;
+                  background-color: #234B4E !important;
+              }
+  
+          .input-group-text {
+              background-color: transparent !important;
+          }
+  
+          .accordion-item::before { /* default text of the accordion item */
+              content: "View all comment";
+          }
+  
+          .select2-selection--single {
+              border: 1px solid #ced4da !important;
+              font-size: .75rem !important;
+              /*border-radius: 4px;*/
+          }
+  
+          .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+              background-color: #033135 !important;
+          }
+  
+          .select2-results__option {
+              font-size: .75rem !important;
+          }
+  
+          .select2-dropdown {
+              border: 1px solid #ced4da !important;
+          }
+  
+          .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+              background-color: #033135 !important;
+              border-color: #033135 !important;
+          }
+  
+          .custom-control-label::before {
+              box-shadow: none !important;
+              border-color: #ced4da !important;
+          }
+  
+          i {
+              color: #033135;
+          }
+          .list-group-item {
+              font-size: .7rem !important;
+          }
+      </style>
+      
+  
+      <img class="img-fluid bg-img" src="img/CW_shape.png" />
+      <div class="col-md-12 col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+          <div class="container my-4">
+              <div class="row p-5" id="Exportpdf">
+                  <div class="col-md-8 mt-2">
+                      <h2>Projektavslut Hemsö</h2>
+                      <img class="img-fluid" src="img/Streck75.png" />
+                  </div>
+                  <div class="col-md-4 mt-2">
+                      <img class="img-fluid float-right" style="max-width: 115px !important;" src="img/Logotyp_115.png" />
+                  </div>
+                  <div class="col-lg-6 mt-4">
+                      <table class="table table-borderless table-sm">
+                          <tbody>
+                              <tr>
+                                  <th class="text-right align-middle"><strong>Bolag:</strong></th>
+                                  
+                                  <td class="row">
+                                      <div class="col-md-11 pr-0">
+                                          <select class="select2" style="width: 100%;" id="Company">
+                                              <option></option>
+                                              <option value="1">Testbolag AB</option>
+                                              <option value="2">Fastighetsbolag AB</option>
+                                              <option value="3">Blasieholmen AB</option>
+                                          </select>
+                                      </div>
+                                      <div class="col-md-1 pl-2 pr-0 pt-1" data-toggle="modal" data-target="#create-company-model">
+                                          <i class="far fa-plus-square fa-lg align-middle" data-toggle="tooltip" title="Lägga till nytt bolag" style="cursor: pointer;"></i>
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <th class="text-right align-middle"><strong>Fastighet:</strong></th>
+                                  <td class="row">
+                                      <div class="col-md-11 pr-0">
+                                          <select class="select2" style="width: 100%;" id="Property">
+                                              <option></option>
+                                              <option value="1">Fastighet 1</option>
+                                              <option value="2">Fastighet 2</option>
+                                              <option value="3">Fastighet 3</option>
+                                          </select>
+                                      </div>
+                                      <div class="col-md-1 pl-2 pr-0 pt-1" data-toggle="modal" data-target="#create-property-model">
+                                          <i class="far fa-plus-square fa-lg align-middle" data-toggle="tooltip" title="Lägga till ny fastighet" style="cursor: pointer;"></i>
+                                      </div>
+                                  </td>
+                              </tr>
+                              
+                              <tr>
+                                  <th class="text-right align-middle"><strong>Projektnamn:</strong></th>
+                                  <td class="row">
+                                      <div class="col-md-11 pr-0">
+                                          <input type="text" id="" style="width: 100%" class="form-control form-control-sm" placeholder="">
+                                      </div>
+                                      <div class="col-md-1 pl-2 pr-0 pt-1" data-toggle="modal" data-target="#project-history-model">
+                                          <i class="fas fa-history fa-lg align-middle" data-toggle="tooltip" title="Visa redan inlagda projekt" style="cursor: pointer;"></i>
+                                      </div>
+  
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <th class="text-right align-middle"><strong>Projektnummer:</strong></th>
+                                  <td class="row">
+                                      <div class="col-md-11 pr-0">
+                                          <input type="text" id="" style="width: 100%" class="form-control form-control-sm" placeholder="">
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <th class="text-right align-middle"><strong>Typ av projekt:</strong></th>
+                                  <td class="row">
+                                      <div class="col-md-11 pr-0">
+                                          <select class="select2" style="width: 100%" id="ProjectType">
+                                              <option></option>
+                                              <option value="1">Nybyggnation</option>
+                                              <option value="2">Planerat underhåll</option>
+                                              <option value="3">Energiprojekt</option>
+                                              <option value="4">Hyresgästanpassning</option>
+                                              <option value="5">Övriga installationer</option>
+                                          </select>
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr>
+                              <th class="text-right align-middle"><strong>Fastighetskategori:</strong></th>
+                              <td class="row">
+                                  <div class="col-md-11 pr-0">
+                                      <select class="select2" style="width: 100%" >
+                                          <option value="1">Skola</option>
+                                          <option value="2">Äldreboende</option>
+                                          <option value="3">LLS</option>
+                                          <option value="4">Sjukhus</option>
+                                          <option value="5">Polishus</option>
+                                      </select>
+                                  </div>
+                              </td>
+                            </tr>
+                              <tr>
+                                <th class="text-right align-middle"><strong>Belopp:</strong></th>
+                                <td class="">
+                                    <div class="input-group input-group-sm ">
+                                      <input  type="number" class="form-control text-right">
+                                      <div class="input-group-append">
+                                          <span class="input-group-text">kr</span>
+                                      </div>
+                                  </div>
+                                </td>
+                            </tr>
+                            
+                              <tr>
+                                <th class="text-right align-middle"><strong>Typ av hyresgäst:</strong></th>
+                                <td class="row">
+                                    <div class="col-md-11 pr-0">
+                                        <!-- <select class="select2" style="width: 100%" >
+                                            <option value="1">privat</option>
+                                            <option value="2">offentlig</option>
+                                            <option value="3">blandat</option>
+                                        </select> -->
+                                        <div class="form-check-inline">
+                                          <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="optradio">Privat
+                                          </label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                          <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="optradio">Offentlig
+                                          </label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                          <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="optradio" >Blandat
+                                          </label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                              <th class="text-right align-middle"><strong>Investeringsbidrag:</strong></th>
+                              <td class="row">
+                                  <div class="col-md-11 pr-0">
+                                      <!-- <select class="select2" style="width: 100%" >
+                                          <option value="1">ja</option>
+                                          <option value="2">nej</option>
+                                          <option value="3">vet ej</option>
+                                      </select> -->
+                                      <div class="form-check-inline">
+                                        <label class="form-check-label">
+                                          <input type="radio" class="form-check-input" name="optradio">Ja
+                                        </label>
+                                      </div>
+                                      <div class="form-check-inline">
+                                        <label class="form-check-label">
+                                          <input type="radio" class="form-check-input" name="optradio">Nej
+                                        </label>
+                                      </div>
+                                      <div class="form-check-inline">
+                                        <label class="form-check-label">
+                                          <input type="radio" class="form-check-input" name="optradio" >Vet ej
+                                        </label>
+                                      </div>
+                                  </div>
+                              </td>
+                            </tr>
+                            <!-- <tr>
+                              <th class="text-right align-middle"><strong>Belopp:</strong></th>
+                              <td class="">
+                                  <div class="input-group input-group-sm ">
+                                    <input  type="number" class="form-control text-right">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">kr</span>
+                                    </div>
+                                </div>
+                              </td>
+                          </tr>
+                          <tr>
+                            <th class="text-right align-middle"><strong>Fastighetskategori:</strong></th>
+                            <td class="row">
+                                <div class="col-md-11 pr-0">
+                                    <select class="select2" style="width: 100%" >
+                                        <option value="1">Skola</option>
+                                        <option value="2">Äldreboende</option>
+                                        <option value="3">LLS</option>
+                                        <option value="4">Sjukhus</option>
+                                        <option value="5">Polishus</option>
+                                    </select>
+                                </div>
+                            </td>
+                          </tr> -->
+                          </tbody>
+                      </table>
+                  </div>
+                  <div class="col-lg-6 mt-4">
+                      <table class="table table-borderless table-sm">
+                          <tbody>
+                              <tr>
+                                  <th class="text-right"><strong>Projektansvarig:</strong></th>
+                                  <td class="">
+                                      <!-- <input type="text" id="" class="form-control form-control-sm" placeholder=""> -->
+                                      <div class="input-group input-group-sm mb-1">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text" style="width: 60px;">Namn</span>
+                                        </div>
+                                        <input type="text" class="form-control form-control-sm" placeholder="">
+                                      </div>
+                                      <div class="input-group input-group-sm mb-1 ">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text" style="width: 60px;">Telefon</span>
+                                        </div>
+                                        <input type="text" class="form-control form-control-sm" placeholder="">
+                                      </div>
+                                      <div class="input-group input-group-sm ">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text" style="width: 60px;">Mail</span>
+                                        </div>
+                                        <input type="text" class="form-control form-control-sm" placeholder="">
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr>
+                                <th class="text-right"><strong>Bolagsansvarig:</strong></th>
+                                <td class="">
+                                    <!-- <input type="text" id="" class="form-control form-control-sm" placeholder=""> -->
+                                    <div class="input-group input-group-sm mb-1">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text" style="width: 60px;">Namn</span>
+                                      </div>
+                                      <input type="text" class="form-control form-control-sm" placeholder="">
+                                    </div>
+                                    <div class="input-group input-group-sm mb-1 ">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text" style="width: 60px;">Telefon</span>
+                                      </div>
+                                      <input type="text" class="form-control form-control-sm" placeholder="">
+                                    </div>
+                                    <div class="input-group input-group-sm ">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text" style="width: 60px;">Mail</span>
+                                      </div>
+                                      <input type="text" class="form-control form-control-sm" placeholder="">
+                                    </div>
+                                </td>
+                            </tr>
+                              
+                              <tr>
+                                  <th class="text-right align-middle" style="line-height: 1;"><strong>Färdigställande:</strong></th>
+                                  <td class="">
+                                      <input type="date" id="" class="form-control form-control-sm " placeholder="">
+                                  </td>
+                              </tr>
+                              <!-- <tr>
+                                  <th class="text-right align-middle"><strong>Budget total:</strong></th>
+                                  <td class="">
+                                      <div class="input-group input-group-sm ">
+                                          <input id="budget-total" name="budget-total" type="number" class="form-control text-right">
+                                          <div class="input-group-append">
+                                              <span class="input-group-text">kr</span>
+                                          </div>
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <th class="text-right align-middle"><strong>Utfall total:</strong></th>
+                                  <td class="">
+                                      <div class="input-group input-group-sm ">
+                                          <input id="result-total" name="result-total" type="number" class="form-control text-right">
+                                          <div class="input-group-append">
+                                              <span class="input-group-text">kr</span>
+                                          </div>
+                                      </div>
+                                  </td>
+                              </tr> -->
+                              <tr>
+                                  <th class="text-right align-middle"><strong>Moms:</strong></th>
+                                  <td class="">
+                                      <!-- <div class="input-group input-group-sm">
+                                          <input type="text" disabled class="form-control text-right" placeholder="- %" id="OutputVAT">
+                                          <div class="input-group-append">
+                                              <button style="font-size: .6rem !important;" class="btn btn-sm btn-cw m-0 px-3 py-0 z-depth-0 waves-effect" type="button" data-toggle="modal" data-target="#local-model">välj lokaler</button>
+                                          </div>
+                                      </div> -->
+                                      <div class="input-group input-group-sm ">
+                                        <input  type="number" class="form-control text-right">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </div>
+                                  </td>
+                              </tr>
+                              <tr>
+                                <td colspan="2">
+                                  <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text py-0">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="Demolition-check">
+                                                <label class="custom-control-label pt-1" for="Demolition-check">Avslutat preliminärt</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="date" class="form-control" disabled id="Demolition-check-input">
+                                </div>
+                              </td>
+                                
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+                  <!-- <div class="col-md-6">
+                      <div class="input-group input-group-sm mb-3">
+                          <div class="input-group-prepend">
+                              <div class="input-group-text py-0">
+                                  <div class="custom-control custom-checkbox">
+                                      <input type="checkbox" class="custom-control-input" id="Demolition-check">
+                                      <label class="custom-control-label pt-1" for="Demolition-check">Rivning & sanering <i class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" title="Rivning & sanering"></i></label>
+                                  </div>
+                              </div>
+                          </div>
+                          <input type="text" class="form-control" disabled id="Demolition-check-input">
+                      </div>
+                  </div> -->
+  
+                  <div class="col-md-12 mt-3 mb-2">
+                      
+                      <h3 class="">Projektbeskrivning</h3>
+                      <div class="form-group">
+                          <textarea class="form-control" id="exampleFormControlTextarea3" rows="7"></textarea>
+                      </div>
+                  </div>
+                  
+                  <!-- <div class="col-md-5">
+                      <h3 class="mt-3">Utfall Projektbeskrivning samt tidsplan</h3>
+                      <div class="form-group">
+                          <textarea class="form-control" id="exampleFormControlTextarea3" rows="7"></textarea>
+                      </div>
+                  </div> -->
+
+                  <div class="col-lg-8 pt-2">
+                      <h3 class="mb-0">Övrig projektinformation</h3>
+                      <!-- <p style="font-size: 70%!important;">Ritningar, kostnadsuppdelning, Kalkyl, Anbud/offert från entreprenör, RUMsa, hyresgästkontrakt m.m.</p> -->
+                      <p style="font-size: 70%!important;">Ritningar, kostnadsuppdelning (kalkyl, anbud eller liknande från entreprenör/byggare), rumsbeskrivning, hyresgästkontrakt m.m.</p>
+                      <div class="form-group inputDnD">
+                          <label class="sr-only" for="inputFile">File Upload</label>
+                          <input type="file" multiple class="form-control-file text-primary font-weight-bold" name="files[]" id="inputFile" onchange="readUrl(this)" data-title="Drag and drop">
+                          <button type="button" class="btn btn-cw btn-block" onclick="document.getElementById('inputFile').click()" data-html2canvas-ignore="true">Välj fil</button>
+                      </div>
+                  </div>
+                  <!-- <div class="col-md-12">
+                      <table class=" table table-sm">
+                          <thead class="black white-text">
+                              <tr>
+                                  <th>Total budget</th>
+                                  <th>Totalt utfall</th>
+                                  <th>Budget vs Utfall</th>
+                                  <th colspan="2">Kommentar</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td>
+                                      <span id="budget-total-output" name="budget-total-output">-</span>
+                                      kr
+                                  </td>
+                                  <td id="">
+                                      <span id="result-total-output" name="result-total-output">-</span>
+                                      kr
+                                  </td>
+                                  <td>
+                                      <span id="total-diff" name="total-diff">-</span>
+                                      kr
+                                  </td>
+                                  <td colspan="2"><input type="text" id="" class="form-control form-control-sm mb-4" placeholder=""></td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div> -->
+  
+                  <div class="col-md-4 d-flex align-items-end pb-3 pl-5">
+                      <a class="btn btn-download float-right d-print-none pt-3 ml-5"  role="button" data-toggle="modal" data-target="#ModalSend" data-backdrop="static" data-keyboard="false" onclick="exportPdf()" data-html2canvas-ignore="true">Skicka in</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+      <!--  Modal create property -->
+      <div class="modal fade" id="create-company-model" tabindex="-1" role="dialog" aria-labelledby="create-company-model" aria-hidden="true">
+          <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h3 class="modal-title w-100">Skapa bolag</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true" class="align-top" style="font-size: 80%;">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <form class="text-center">
+                          <input type="text" id="" class="form-control mb-3" placeholder="Namn">
+                          <input type="text" id="" class="form-control" placeholder="Org nummer">
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-cw btn-sm" data-dismiss="modal">avbryt</button>
+                      <button type="button" class="btn btn-cw btn-sm" data-dismiss="modal">spara</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+      <!--  Modal create property -->
+      <div class="modal fade" id="create-property-model" tabindex="-1" role="dialog" aria-labelledby="create-property-model" aria-hidden="true">
+          <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h3 class="modal-title w-100">Skapa fastighet</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true" class="align-top" style="font-size: 80%;">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <form class="">
+                          <input type="text" id="" class="form-control mb-3" placeholder="Namn">
+                          <input type="text" id="" class="form-control mb-3" placeholder="Internnummer">
+                          <input type="text" id="" class="form-control mb-3" placeholder="Beteckning">
+                          <input type="text" id="" class="form-control mb-3" placeholder="Total yta">
+                          <input type="text" id="" class="form-control mb-3" placeholder="Momsad yta">
+                          <select class="select2" style="width: 100%;">
+                              <option value="1">Testbolag AB</option>
+                              <option value="2">Fastighetsbolag AB</option>
+                              <option value="3">Blasieholmen AB</option>
+                          </select>
+                          <input type="text" id="" class="form-control my-3" placeholder="Område/ort">
+                          <select class="select2" style="width: 100%;">
+                              <option value="1">Bostad</option>
+                              <option value="2">Hotell</option>
+                              <option value="3">Kontor</option>
+                          </select>
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-cw btn-sm" data-dismiss="modal">avbryt</button>
+                      <button type="button" class="btn btn-cw btn-sm" data-dismiss="modal">spara</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+      <!--  Modal project history -->
+      <div class="modal fade left" id="project-history-model" tabindex="-1" role="dialog" aria-labelledby="project-history-model" aria-hidden="true">
+          <div class="modal-dialog modal-sm modal-full-height modal-left" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h3 class="modal-title w-100">Redan inlagda projekt</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true" class="align-top" style="font-size: 80%;">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <input type="text" class="form-control form-control-sm live-search-box" placeholder="Sök här..." />
+                      <ul class="list-group list-group-flush live-search-list">
+                          <li class="list-group-item">Cras justo odio</li>
+                          <li class="list-group-item">Dapibus ac facilisis in</li>
+                          <li class="list-group-item">Morbi leo risus</li>
+                          <li class="list-group-item">Porta ac consectetur ac</li>
+                          <li class="list-group-item">Vestibulum at eros</li>
+                      </ul>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-cw btn-sm" data-dismiss="modal">avbryt</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+      <!--  Modal locals  -->
+      <div class="modal fade" id="local-model" tabindex="-1" role="dialog" aria-labelledby="local-model" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title w-100">Välj lokaler</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <table class="table table-striped">
+                          <thead>
+                              <tr>
+                                  <th></th>
+                                  <th style="width: 100px;">Fördelning</th>
+                                  <th>Namn</th>
+                                  <th class="text-right" style="width: 100px;">Moms</th>
+                                  <th class="text-right" style="width: 100px;">LOA</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td>
+                                      <!-- Default unchecked -->
+                                      <div class="custom-control custom-checkbox">
+                                          <input type="checkbox" class="custom-control-input" id="tableDefaultCheck1" onclick="localFunction()">
+                                          <label class="custom-control-label" for="tableDefaultCheck1"></label>
+                                      </div>
+                                  </td>
+                                  <td><input type="number" class="form-control"></td>
+                                  <td>GEMENSAMMA YTOR</td>
+                                  <td></td>
+                                  <td></td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      <!-- Default unchecked -->
+                                      <div class="custom-control custom-checkbox">
+                                          <input type="checkbox" class="custom-control-input" id="tableDefaultCheck2" onclick="localFunction()">
+                                          <label class="custom-control-label" for="tableDefaultCheck2"></label>
+                                      </div>
+                                  </td>
+                                  <td><input type="number" class="form-control"></td>
+                                  <td>lokal 1</td>
+                                  <td class="text-right">100</td>
+                                  <td class="text-right">713</td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      <!-- Default unchecked -->
+                                      <div class="custom-control custom-checkbox">
+                                          <input type="checkbox" class="custom-control-input" id="tableDefaultCheck3" onclick="localFunction()">
+                                          <label class="custom-control-label" for="tableDefaultCheck3"></label>
+                                      </div>
+                                  </td>
+                                  <td><input type="number" class="form-control"></td>
+                                  <td>lokal 2</td>
+                                  <td class="text-right">100</td>
+                                  <td class="text-right">1 130</td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      <!-- Default unchecked -->
+                                      <div class="custom-control custom-checkbox">
+                                          <input type="checkbox" class="custom-control-input" id="tableDefaultCheck4" onclick="localFunction()">
+                                          <label class="custom-control-label" for="tableDefaultCheck4"></label>
+                                      </div>
+                                  </td>
+                                  <td><input type="number" class="form-control"></td>
+                                  <td>lokal 3</td>
+                                  <td class="text-right">0</td>
+                                  <td class="text-right">5 213</td>
+                              </tr>
+                          </tbody>
+                          <tfoot>
+                              <tr>
+                                  <td colspan="2">Total</td>
+                                  <td></td>
+                                  <td class="text-right"><span id="TotalVAT"></span> %</td>
+                                  <td class="text-right"><span id="TotalLOA"></span> kvm</td>
+                              </tr>
+                          </tfoot>
+                      </table>
+                      <!-- Table  -->
+                  </div>
+                  <div class="modal-footer">
+                      
+                      <button type="button" class="btn btn-cw btn-sm" id="LocalSaveBtn" data-dismiss="modal" onclick="localFunction()">spara val</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+      <!--  Modal send in  -->
+      <div class="modal fade" id="ModalSend" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+           aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                  <div class="modal-body">
+                      <div class="text-center mt-4">
+                          <i class="fas fa-check fa-4x mb-3 animated rotateIn" style="color: #C1EAE3;"></i>
+                          <h3 class="mt-2 mb-4">Projektavslut skickat</h3>
+                          <p style="font-size: 90% !important;" class="my-3">
+                              Projektavslutet är skickat, fliken kan stängas eller tryck på knappen för att skapa ett nytt projektavslut.
+                          </p>
+                          <button type="button" class="btn btn-cw my-3" onClick="window.location.href=window.location.href">nytt projektavslut</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+     
+  
+  
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+  
+  
+      <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+      <script>
+  
+          //function exportPdf() {
+          //    var form = $("#projectForm");
+          //    form.prop("target", "_blank"); // Open in new window
+          //    var pdfExport = $('<input type="hidden" name="pdfExport" value="true" />');
+          //    form.append(pdfExport); // Add that it's a PDF Export
+          //    form.submit(); // Submit the form with the added data
+  
+          //    // Cleanup
+          //    pdfExport.remove(); // remove the pdf export flag
+          //    form.removeAttr("target"); // remove the target attribute
+          //    //$(".numericOnly").each(function () {
+          //    //    $(this).val(FormatNumber($(this).val()));
+          //    //});
+          //}
+          function exportPdf() {
+              const element = document.getElementById('Exportpdf');
+              //element.style.width = '850px';
+              //element.style.height = '1900px';
+  
+              var opt = {
+                  margin: 0,
+                  filename: 'projekavslut.pdf',
+                  image: { type: 'jpeg', quality: 1 },
+                  //html2canvas: { removeContainer: false },
+                  jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait', precision: '16', }
+              };
+  
+              html2pdf().set(opt).from(element).save();
+          }
+          $(function () {
+              $('[data-toggle="tooltip"]').tooltip()
+          })
+          //live search
+          $(document).ready(function () {
+              $('.live-search-list li').each(function () {
+                  $(this).attr('data-search-term', $(this).text().toLowerCase());
+              });
+  
+              $('.live-search-box').on('keyup', function () {
+  
+                  var searchTerm = $(this).val().toLowerCase();
+  
+                  $('.live-search-list li').each(function () {
+  
+                      if ($(this).filter('[data-search-term *= ' + searchTerm + ']').length > 0 || searchTerm.length < 1) {
+                          $(this).show();
+                      } else {
+                          $(this).hide();
+                      }
+                  });
+              });
+          });
+  
+          $(document).ready(function () {
+              $("#Company").attr(
+                  "data-placeholder", "Välj ett bolag"
+              );
+              $("#Property").attr(
+                  "data-placeholder", "Välj en fastighet"
+              );
+              $("#ProjectType").attr(
+                  "data-placeholder", "Välj typ av projekt"
+              );
+              $("#AddedProjects").attr(
+                  "data-placeholder", "Sök bland redan inlagda projekt"
+              );
+          });
+          function localFunction() {
+              var checkBox1 = document.getElementById("tableDefaultCheck1");
+              var checkBox2 = document.getElementById("tableDefaultCheck2");
+              var checkBox3 = document.getElementById("tableDefaultCheck3");
+              var checkBox4 = document.getElementById("tableDefaultCheck4");
+  
+  
+  
+              if (checkBox1.checked == true) {
+                  var checkBox1LOA = 7056;
+              } else {
+                  var checkBox1LOA = 0;
+              }
+  
+              if (checkBox2.checked == true) {
+                  var checkBox2LOA = 713;
+                  var checkBox2VAT = 100;
+              } else {
+                  var checkBox2LOA = 0;
+                  var checkBox2VAT = 0;
+              }
+  
+              if (checkBox3.checked == true) {
+                  var checkBox3LOA = 1130;
+                  var checkBox3VAT = 100;
+              } else {
+                  var checkBox3LOA = 0;
+                  var checkBox3VAT = 0;
+              }
+              if (checkBox4.checked == true) {
+                  var checkBox4LOA = 5213;
+                  var checkBox4VAT = 0;
+              } else {
+                  var checkBox4LOA = 0;
+                  var checkBox4VAT = 0;
+              }
+  
+              var TotalLOA = checkBox1LOA + checkBox2LOA + checkBox3LOA + checkBox4LOA;
+              var TotalVAT = checkBox2VAT + checkBox3VAT + checkBox4VAT;
+  
+              if (checkBox4.checked == true) {
+                  var VATTotal = Math.round((TotalVAT / TotalLOA) * 100)
+              } else {
+                  var VATTotal = 100
+              }
+  
+              document.getElementById("TotalLOA").textContent = TotalLOA;
+              //document.getElementById("TotalVAT").textContent = TotalVAT;
+              document.getElementById("TotalVAT").textContent = VATTotal;
+              $("#OutputVAT").attr("placeholder", VATTotal + "%");
+          }
+  
+          $('li').click(function () {
+              $(this).addClass('active').siblings().removeClass('active');
+          });
+  
+          function readUrl(input) {
+              if (input.files && input.files[0]) {
+                  let reader = new FileReader();
+                  reader.onload = () => {
+                      let fileName = input.files[0].name;
+                      input.setAttribute("data-title", fileName);
+                  }
+                  reader.readAsDataURL(input.files[0]);
+              }
+              var inp = document.getElementById('inputFile');
+              for (var i = 0; i < inp.files.length; ++i) {
+                  var name = inp.files.item(i).name;
+                  alert("here is a file name: " + name);
+              }
+          };
+  
+  
+          $("#displayPercent").click(function () {
+              $(".kr-percent").text("%");
+          });
+          $("#displayKr").click(function () {
+              $(".kr-percent").text("kr");
+          });
+          $("#budget-total").change(function () {
+              $("#total-diff").val(Math.round($("#budget-total").val() - $("#result-total").val()));
+              $("#total-diff").text($("#total-diff").val());
+  
+              $("#budget-total-output").text($("#budget-total").val());
+          });
+          $("#result-total").change(function () {
+              $("#total-diff").val(Math.round($("#budget-total").val() - $("#result-total").val()));
+              $("#total-diff").text($("#total-diff").val());
+  
+              $("#result-total-output").text($("#result-total").val());
+          });
+  
+          $(function () {
+              $('#Demolition-check').click(function () {
+                  if ($(this).is(':checked')) {
+                      $('#Demolition-check-input').removeAttr('disabled');
+                  } else {
+                      $('#Demolition-check-input').attr('disabled', 'disabled');
+                  }
+              });
+          });
+  
+          $(document).ready(function () {
+              $('.select2').select2({
+                  language: {
+                      errorLoading: function () {
+                          return 'Resultat kunde inte laddas.';
+                      },
+                      inputTooLong: function (args) {
+                          var overChars = args.input.length - args.maximum;
+  
+                          var message = 'Vänligen sudda ut ' + overChars + ' tecken';
+  
+                          return message;
+                      },
+                      inputTooShort: function (args) {
+                          var remainingChars = args.minimum - args.input.length;
+  
+                          var message = 'Vänligen skriv in ' + remainingChars +
+                              ' eller fler tecken';
+  
+                          return message;
+                      },
+                      loadingMore: function () {
+                          return 'Laddar fler resultat…';
+                      },
+                      maximumSelected: function (args) {
+                          var message = 'Du kan max välja ' + args.maximum + ' element';
+  
+                          return message;
+                      },
+                      noResults: function () {
+                          return 'Inga träffar';
+                      },
+                      searching: function () {
+                          return 'Söker…';
+                      },
+                      removeAllItems: function () {
+                          return 'Ta bort alla objekt';
+                      }
+                  },
+                  escapeMarkup: function (markup) {
+                      return markup;
+                  },
+              });
+          });
+  
+      </script>
+  </body>
+  </html>
+  

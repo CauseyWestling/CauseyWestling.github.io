@@ -15,48 +15,169 @@
       href="https://fonts.googleapis.com/css?family=Montserrat"
       rel="stylesheet"
     />
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    /> -->
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <!-- CSS -->
     <link href="main.css" rel="stylesheet">
 </head>
 <body>
-  <iframe src="nav.html" width="100%" height="63px" style="border:none;"></iframe>
+  <div id="mySidenav" class="sidenav" style="z-index: 2;">
+    <div class="row">
+      <div class="col-3"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></div>
+      <div class="col-9"><h4 class="mt-4" style="color: #04292c !important;"> Fastighet</h4></div>
       
-      <div id="wrapper">
+      
+    </div>
+    <p class="" style="color: #04292c !important; font-size: 1rem; padding-left: 10px; cursor: pointer;">Causeywestling / Skolfastigheter AB / Fastighet 1</p>
+    <input type="text" class="form-control form-control-sm live-search-box" placeholder="Sök här..." />
+    <ul class="list-group list-group-flush live-search-list">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+    </ul>
+    <!-- <ul id="progressbar">
+      <li class="active">Fastighet</li>
+      <li>Bolag</li>
+      <li>Klient</li>
+    </ul> -->
+  </div>
+  <!-- <iframe src="nav.html" width="100%" height="63px" style="border:none;"></iframe> -->
+    
+      <i class="fas fa-sliders-h "  aria-hidden="true" style="color: #04292c !important; position: fixed; top:40px; right: 0px; cursor: pointer;z-index: 1; padding: 5px; background-color: #C1EAE3;" onclick="openNav()"></i>
+    
+      
+      <div id="wrapper" class="mb-4">
         <div class="content-area">
           <div class="container-fluid">
-            <div class="text-right mt-3 mb-3 d-fixed">
-              
-            </div>
+            <!-- <div class="row">
+              <div class="col-md-6 mt-3">
+                <select class="select2" style="width: 280px;">
+                  <option value="1">Trophi</option>
+                  <option value="2">--Skolfastigheter AB</option>
+                  <option value="3">----Fastigheten 1</option>
+                  <option value="4">------Hg anpassning LO - Projekt 123</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <div class="text-right mt-3 d-fixed">
+                  <p class="mb-0" style="color: #C1EAE3 !important;">Trophi - Fastighet 1</p>
+                </div>
+              </div>
+            </div> -->
+            
             <div class="main">
+              <select class="browser-default custom-select mt-3" style="width: 23%;">
+                <option selected>Välj år</option>
+                <option value="1">2022</option>
+                <option value="2">2021</option>
+                <option value="3">2020</option>
+              </select>
               <div class="row sparkboxes mt-4">
                 <div class="col-md-3">
-                  <div class="box box1 h-100">                   
-                    <h2 class="ml-3 mt-4 pt-3 text-white align-middle">Trophi</h3>                   
+                  <div class="box box1 h-100"> 
+                    <p class="mb-0 text-right" style="color: #C1EAE3 !important; font-size: 12px">Causeywestling - Skolfastigheter AB</p>
+                    <h3 class="ml-3 mt-3  text-white align-middle">Fastighet 1</h3>                         
+                      
+                    <!-- <h2 class="ml-3 mt-4 pt-3 text-white align-middle">Causeywestling</h3> -->
+                      
+                    
                     <!-- <div id="spark1"></div> -->
                   </div>
                 </div>
                 <div class="col-md-3">
-                  <div class="box box2">
+                  <div class="box box2 h-100">
                     <div class="details">
                       <h3 class="value" akhi="15">0</h3>
                       <h4>Företag</h4>
                     </div>
-                    <div id="spark2"></div>
+                    <div class="svg-div">
+                      <svg version="1.1" class="svg"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewBox="0 0 512 512" xml:space="preserve" style=" fill: #033135; opacity: 0.5; transform: rotate(20deg); width: 150px; height: 110px;">
+                      <g>
+                        <g>
+                          <g>
+                            <path d="m459.3,68.3h-109.5v-17.7c0-21.9-16.7-39.6-38.6-39.6h-111.5c-20.9,0-38.6,17.7-38.6,39.6v17.7h-108.4c-22.9,0-41.7,18.8-41.7,41.7v349.3c0,22.9 18.8,41.7 41.7,41.7h406.6c22.9,0 41.7-18.8 41.7-41.7v-349.3c0-22.9-18.8-41.7-41.7-41.7zm-277.3-17.7c0-10.4 8.3-18.8 18.8-18.8h110.5c10.4,0 18.8,8.3 18.8,18.8v17.7h-148.1v-17.7zm-129.3,38.6h406.6c11.5,0 20.9,9.4 20.9,20.9v97.4l-171.9,101.7c-7.5-21.7-28.2-37.5-52.3-37.5-24.1,0-44.9,15.9-52.3,37.7l-171.8-102v-97.4c-7.10543e-15-11.4 9.3-20.8 20.8-20.8zm237.7,237.7c0,19.8-15.6,35.4-34.4,35.4s-34.4-15.6-34.4-35.4 15.6-35.4 34.4-35.4 34.4,15.6 34.4,35.4zm168.9,153.2h-406.6c-11.5,0-20.9-9.4-20.9-20.9v-227.6l169.2,100.4c2.6,27.9 26.5,50.2 55,50.2 28.6,0 52.5-22.4 55-50.4l169.1-100.1v227.6c0,11.5-9.3,20.8-20.8,20.8z"/>
+                          </g>
+                        </g>
+                      </g>                      
+                      </svg>
+                    </div>
+                    <!-- <div id="spark2"></div> -->
                   </div>
                 </div>
                 <div class="col-md-3">
-                  <div class="box box3">
+                  <div class="box box3 h-100">
                     <div class="details">
                       <h3 class="value" akhi="24">0</h3>
                       <h4>Fastigheter</h4>
                     </div>
-                    <div id="spark3"></div>
+                    <div class="svg-div">
+                      <svg version="1.1" class="svg"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewBox="0 0 512 512" xml:space="preserve" style=" fill: #033135; opacity: 0.5; transform: rotate(15deg); width: 290px; height: 340px;">
+                      <g>
+                        <g>
+                          <g>
+                            <path d="M155.706,176c-0.001,0-0.003,0-0.005,0l-65.411-0.125H20.294c-1.381,0-2.5-1.119-2.5-2.5V60.904
+                              c0-1.381,1.119-2.5,2.5-2.5h34.911V2.5c0-1.381,1.119-2.5,2.5-2.5h98c1.381,0,2.5,1.119,2.5,2.5v171c0,0.664-0.264,1.3-0.734,1.77
+                              C157.003,175.737,156.368,176,155.706,176z M92.794,170.88l60.411,0.115V5h-93v53.404h30.089c1.381,0,2.5,1.119,2.5,2.5V170.88z
+                              M22.794,170.875h65V63.404h-65V170.875z M80.076,154.634H60.297c-1.381,0-2.5-1.119-2.5-2.5v-11.575c0-1.381,1.119-2.5,2.5-2.5
+                              h19.779c1.381,0,2.5,1.119,2.5,2.5v11.575C82.576,153.515,81.457,154.634,80.076,154.634z M62.797,149.634h14.779v-6.575H62.797
+                              V149.634z M50.292,154.634H30.513c-1.381,0-2.5-1.119-2.5-2.5v-11.575c0-1.381,1.119-2.5,2.5-2.5h19.779c1.381,0,2.5,1.119,2.5,2.5
+                              v11.575C52.792,153.515,51.673,154.634,50.292,154.634z M33.013,149.634h14.779v-6.575H33.013V149.634z M138.714,153.35h-9.563
+                              c-1.381,0-2.5-1.119-2.5-2.5v-10.392c0-1.381,1.119-2.5,2.5-2.5h9.563c1.381,0,2.5,1.119,2.5,2.5v10.392
+                              C141.214,152.231,140.095,153.35,138.714,153.35z M131.652,148.35h4.563v-5.392h-4.563V148.35z M111.135,153.35h-9.563
+                              c-1.381,0-2.5-1.119-2.5-2.5v-10.392c0-1.381,1.119-2.5,2.5-2.5h9.563c1.381,0,2.5,1.119,2.5,2.5v10.392
+                              C113.635,152.231,112.516,153.35,111.135,153.35z M104.072,148.35h4.563v-5.392h-4.563V148.35z M80.076,132.017H60.297
+                              c-1.381,0-2.5-1.119-2.5-2.5v-11.575c0-1.381,1.119-2.5,2.5-2.5h19.779c1.381,0,2.5,1.119,2.5,2.5v11.575
+                              C82.576,130.897,81.457,132.017,80.076,132.017z M62.797,127.017h14.779v-6.575H62.797V127.017z M50.292,132.017H30.513
+                              c-1.381,0-2.5-1.119-2.5-2.5v-11.575c0-1.381,1.119-2.5,2.5-2.5h19.779c1.381,0,2.5,1.119,2.5,2.5v11.575
+                              C52.792,130.897,51.673,132.017,50.292,132.017z M33.013,127.017h14.779v-6.575H33.013V127.017z M138.714,128.439h-9.563
+                              c-1.381,0-2.5-1.119-2.5-2.5v-10.391c0-1.381,1.119-2.5,2.5-2.5h9.563c1.381,0,2.5,1.119,2.5,2.5v10.391
+                              C141.214,127.32,140.095,128.439,138.714,128.439z M131.652,123.439h4.563v-5.391h-4.563V123.439z M111.135,128.439h-9.563
+                              c-1.381,0-2.5-1.119-2.5-2.5v-10.391c0-1.381,1.119-2.5,2.5-2.5h9.563c1.381,0,2.5,1.119,2.5,2.5v10.391
+                              C113.635,127.32,112.516,128.439,111.135,128.439z M104.072,123.439h4.563v-5.391h-4.563V123.439z M80.076,109.399H60.297
+                              c-1.381,0-2.5-1.119-2.5-2.5V95.324c0-1.381,1.119-2.5,2.5-2.5h19.779c1.381,0,2.5,1.119,2.5,2.5v11.575
+                              C82.576,108.28,81.457,109.399,80.076,109.399z M62.797,104.399h14.779v-6.575H62.797V104.399z M50.292,109.399H30.513
+                              c-1.381,0-2.5-1.119-2.5-2.5V95.324c0-1.381,1.119-2.5,2.5-2.5h19.779c1.381,0,2.5,1.119,2.5,2.5v11.575
+                              C52.792,108.28,51.673,109.399,50.292,109.399z M33.013,104.399h14.779v-6.575H33.013V104.399z M138.714,103.528h-9.563
+                              c-1.381,0-2.5-1.119-2.5-2.5V90.637c0-1.381,1.119-2.5,2.5-2.5h9.563c1.381,0,2.5,1.119,2.5,2.5v10.392
+                              C141.214,102.409,140.095,103.528,138.714,103.528z M131.652,98.528h4.563v-5.392h-4.563V98.528z M111.135,103.528h-9.563
+                              c-1.381,0-2.5-1.119-2.5-2.5V90.637c0-1.381,1.119-2.5,2.5-2.5h9.563c1.381,0,2.5,1.119,2.5,2.5v10.392
+                              C113.635,102.409,112.516,103.528,111.135,103.528z M104.072,98.528h4.563v-5.392h-4.563V98.528z M80.076,86.781H60.297
+                              c-1.381,0-2.5-1.119-2.5-2.5V72.706c0-1.381,1.119-2.5,2.5-2.5h19.779c1.381,0,2.5,1.119,2.5,2.5v11.576
+                              C82.576,85.662,81.457,86.781,80.076,86.781z M62.797,81.781h14.779v-6.576H62.797V81.781z M50.292,86.781H30.513
+                              c-1.381,0-2.5-1.119-2.5-2.5V72.706c0-1.381,1.119-2.5,2.5-2.5h19.779c1.381,0,2.5,1.119,2.5,2.5v11.576
+                              C52.792,85.662,51.673,86.781,50.292,86.781z M33.013,81.781h14.779v-6.576H33.013V81.781z M138.714,78.617h-9.563
+                              c-1.381,0-2.5-1.119-2.5-2.5V65.726c0-1.381,1.119-2.5,2.5-2.5h9.563c1.381,0,2.5,1.119,2.5,2.5v10.391
+                              C141.214,77.498,140.095,78.617,138.714,78.617z M131.652,73.617h4.563v-5.391h-4.563V73.617z M111.135,78.617h-9.563
+                              c-1.381,0-2.5-1.119-2.5-2.5V65.726c0-1.381,1.119-2.5,2.5-2.5h9.563c1.381,0,2.5,1.119,2.5,2.5v10.391
+                              C113.635,77.498,112.516,78.617,111.135,78.617z M104.072,73.617h4.563v-5.391h-4.563V73.617z M138.714,53.707h-9.563
+                              c-1.381,0-2.5-1.119-2.5-2.5V40.815c0-1.381,1.119-2.5,2.5-2.5h9.563c1.381,0,2.5,1.119,2.5,2.5v10.392
+                              C141.214,52.587,140.095,53.707,138.714,53.707z M131.652,48.707h4.563v-5.392h-4.563V48.707z M111.135,53.707h-9.563
+                              c-1.381,0-2.5-1.119-2.5-2.5V40.815c0-1.381,1.119-2.5,2.5-2.5h9.563c1.381,0,2.5,1.119,2.5,2.5v10.392
+                              C113.635,52.587,112.516,53.707,111.135,53.707z M104.072,48.707h4.563v-5.392h-4.563V48.707z M83.555,53.707h-9.563
+                              c-1.381,0-2.5-1.119-2.5-2.5V40.815c0-1.381,1.119-2.5,2.5-2.5h9.563c1.381,0,2.5,1.119,2.5,2.5v10.392
+                              C86.055,52.587,84.936,53.707,83.555,53.707z M76.493,48.707h4.563v-5.392h-4.563V48.707z M138.714,28.795h-9.563
+                              c-1.381,0-2.5-1.119-2.5-2.5V15.904c0-1.381,1.119-2.5,2.5-2.5h9.563c1.381,0,2.5,1.119,2.5,2.5v10.392
+                              C141.214,27.676,140.095,28.795,138.714,28.795z M131.652,23.795h4.563v-5.392h-4.563V23.795z M111.135,28.795h-9.563
+                              c-1.381,0-2.5-1.119-2.5-2.5V15.904c0-1.381,1.119-2.5,2.5-2.5h9.563c1.381,0,2.5,1.119,2.5,2.5v10.392
+                              C113.635,27.676,112.516,28.795,111.135,28.795z M104.072,23.795h4.563v-5.392h-4.563V23.795z M83.555,28.795h-9.563
+                              c-1.381,0-2.5-1.119-2.5-2.5V15.904c0-1.381,1.119-2.5,2.5-2.5h9.563c1.381,0,2.5,1.119,2.5,2.5v10.392
+                              C86.055,27.676,84.936,28.795,83.555,28.795z M76.493,23.795h4.563v-5.392h-4.563V23.795z"/>
+                          </g>
+                        </g>
+                      </g>                      
+                      </svg>
+                    </div>
+                    <!-- <div id="spark3"></div> -->
                   </div>
                 </div>
                 <div class="col-md-3">
@@ -65,18 +186,23 @@
                       <h3 class="value" akhi="30">0</h3>
                       <h4>Projekt</h4>
                     </div>
-                    <div id="spark4"></div>
+                    <div>
+                      <h1 class="ml-5 mt-2 mb-5  pt-3" style="color: #033135; opacity:0.5; padding-left: 130px; transform: rotate(10deg);">20/30</h1>
+                    </div>
+                    <!-- <div id="spark4"></div> -->
                   </div>
                 </div>               
               </div>
               <div class="row mt-4 mb-5">
-                <div class="col-md-12">
-                  <div class="box h-100 mt-4">
-                    <div class=" text-white col-md-2">
-                      <h3>137 835 627</h3>
-                      <h4 class="pb-4">Projektsumma</h4>
-                    </div>                  
-                    <div class="col-md-10" id="spark1"></div>
+                <div class="col-md-12" style="max-height: 120px;">
+                  <div class="box h-100 mt-4 pt-0" >
+                    <div class=" text-white col-md-4 pt-3">
+                      <h3 class="mt-5 mb-0 pt-3">137 835 627 <span style="font-size: 15px;">kr analyserat av 183 364 258 kr</span></h3>
+                    </div> 
+                    <div class="col-md-8" id="spark1"></div>         
+                      
+                    <div class="col-md-12 text-right text-white" style="font-size: 9px;">Totalt att analysera</div>
+                    
                   </div>
                 </div>
               </div>
@@ -91,7 +217,7 @@
                 </div>
                 <div class="col-md-7">
                   <div class="box shadow mt-4">
-                    <p class="text-white m-0">Avskrivning</p>
+                    <p class="text-white m-0">Projekt</p>
                     <div id="line-adwords"></div>
                   </div>
                 </div>
@@ -100,9 +226,36 @@
               <div class="row mt-4">
                 <div class="col-md-5">
                   <div class="box shadow mt-4">
-                    <p class="text-white m-0">K3</p>
+                    <ul class="tab-group">
+                      <li class="tab active"><a href="#signup">Senaste färdigställda projekt</a></li>
+                      <li class="tab"><a href="#login">senaste
+                        inkomna projekt</a></li>
+                    </ul>
+                    <!-- <p class="text-white m-0">Senaste färdigställda projekt</p> -->
+                    <table class="table text-white">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Projekt</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Mark</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Jacob</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>Larry the Bird</td>
+                        </tr>
+                      </tbody>
+                    </table>
                     <!-- <div id="barchart"></div> -->
-                    <div class="mt-3">
+                    <!-- <div class="mt-3">
                       <div id="progress1"></div>
                     </div>
                     <div class="mt-2">
@@ -117,12 +270,12 @@
                     <div class="mt-2">
                       <div id="progress5"></div>
                     </div>
-                    <div style="height: 15px;"></div>
+                    <div style="height: 15px;"></div> -->
                   </div>
                 </div>
                 <div class="col-md-7">
                   <div class="box shadow mt-4">
-                    <p class="text-white m-0">Total per del</p>
+                    <p class="text-white m-0">Klassificering per kvartal</p>
                     <div id="areachart"></div>
                   </div>
                 </div>
@@ -131,11 +284,90 @@
           </div>
         </div>
       </div>
-      <div style="height: 40px;"></div>
       
+
+     
+
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>   
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script> -->
+      <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>   
       <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> 
+      <script>
+        $(document).ready(function () {
+            $('.live-search-list li').each(function () {
+                $(this).attr('data-search-term', $(this).text().toLowerCase());
+            });
+
+            $('.live-search-box').on('keyup', function () {
+
+                var searchTerm = $(this).val().toLowerCase();
+
+                $('.live-search-list li').each(function () {
+
+                    if ($(this).filter('[data-search-term *= ' + searchTerm + ']').length > 0 || searchTerm.length < 1) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+        });
+
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+
+        $(document).ready(function () {
+            $('.select2').select2({
+                language: {
+                    errorLoading: function () {
+                        return 'Resultat kunde inte laddas.';
+                    },
+                    inputTooLong: function (args) {
+                        var overChars = args.input.length - args.maximum;
+
+                        var message = 'Vänligen sudda ut ' + overChars + ' tecken';
+
+                        return message;
+                    },
+                    inputTooShort: function (args) {
+                        var remainingChars = args.minimum - args.input.length;
+
+                        var message = 'Vänligen skriv in ' + remainingChars +
+                            ' eller fler tecken';
+
+                        return message;
+                    },
+                    loadingMore: function () {
+                        return 'Laddar fler resultat…';
+                    },
+                    maximumSelected: function (args) {
+                        var message = 'Du kan max välja ' + args.maximum + ' element';
+
+                        return message;
+                    },
+                    noResults: function () {
+                        return 'Inga träffar';
+                    },
+                    searching: function () {
+                        return 'Söker…';
+                    },
+                    removeAllItems: function () {
+                        return 'Ta bort alla objekt';
+                    }
+                },
+                escapeMarkup: function (markup) {
+                    return markup;
+                },
+            });
+        });
+      </script>
       <script>
           const counters = document.querySelectorAll('.value');
           const speed = 2000;
@@ -537,52 +769,120 @@ var chartProgress5 = new ApexCharts(
 chartProgress5.render();
 
 var spark1 = {
-  chart: {
-    id: 'spark1',
-    group: 'sparks',
-    type: 'line',
-    height: 80,
-    sparkline: {
-      enabled: true
-    },
-    dropShadow: {
-      enabled: true,
-      top: 1,
-      left: 1,
-      blur: 2,
-      opacity: 0.2,
-    }
-  },
-  series: [{
-    data: [97835627, 8835627, 107835627, 17835627, 120835627, 27835627, 140835627, 25835627, 17835627, 137835627]
-  }],
-  stroke: {
-    curve: 'smooth'
-  },
+  // chart: {
+  //   id: 'spark1',
+  //   group: 'sparks',
+  //   type: 'line',
+  //   height: 80,
+  //   sparkline: {
+  //     enabled: true
+  //   },
+  //   dropShadow: {
+  //     enabled: true,
+  //     top: 1,
+  //     left: 1,
+  //     blur: 2,
+  //     opacity: 0.2,
+  //   }
+  // },
+  // series: [{
+  //   data: [97835627, 8835627, 107835627, 17835627, 120835627, 27835627, 140835627, 25835627, 17835627, 137835627]
+  // }],
+  // stroke: {
+  //   curve: 'smooth'
+  // },
   
-  grid: {
-    padding: {
-      top: 20,
-      bottom: 10,
-      left: 50
-    }
-  },
-  markers: {
-    size: 0
-  },
-  colors: ['#C1EAE3'],
-  tooltip: {
-    x: {
-      show: false
-    },
-    y: {
-      title: {
-        formatter: function formatter(val) {
-          return '';
+  // grid: {
+  //   padding: {
+  //     top: 20,
+  //     bottom: 10,
+  //     left: 50
+  //   }
+  // },
+  // markers: {
+  //   size: 0
+  // },
+  // colors: ['#C1EAE3'],
+  // tooltip: {
+  //   x: {
+  //     show: false
+  //   },
+  //   y: {
+  //     title: {
+  //       formatter: function formatter(val) {
+  //         return '';
+  //       }
+  //     }
+  //   }
+  // }
+  series: [{
+          name: 'Analyserat',
+          data: [20]
+        }, {
+          name: 'Ej analyserat',
+          data: [10]
+        }],
+          chart: {
+          type: 'bar',
+          height: '100%',
+          stacked: true,
+          stackType: '100%',
+          offsetY: 0
+        },
+        plotOptions: {
+          bar: {
+            horizontal: true, 
+            
+          }
+        },
+        xaxis: {
+          labels: {
+            show: false
+          },
+          axisBorder: {
+            show: false
+          },
+          axisTicks: {
+            show: false
+          }
+        }, 
+        yaxis: {
+          labels: {
+            show: false
+          },
+          axisBorder: {
+            show: false
+          },
+          axisTicks: {
+            show: false
+          }
+        },      
+        grid: {
+          show: false,
+        },
+        stroke: {
+          width: 0,
+        },
+        tooltip: {
+          x: {
+              show: false
+          },
+          y: {
+            formatter: function (val) {
+              return val
+            }
+          }
+        },
+        fill: {
+          opacity: 1 
+        },
+        legend: {
+          show: false,
+        },
+        fill: {
+         colors: ['#C1EAE3', '#FFA792'],
         }
-      }
-    }
-  }
+
 }
 
 var spark2 = {
@@ -746,67 +1046,123 @@ new ApexCharts(document.querySelector("#spark4"), spark4).render();
 
 
 var optionsLine = {
-  chart: {
-    height: 328,
-    type: 'line',
-    zoom: {
-      enabled: false
-    },
-    dropShadow: {
-      enabled: false,
-      top: 3,
-      left: 2,
-      blur: 4,
-      opacity: 1,
-    }
-  },
-  stroke: {
-    curve: 'smooth',
-    width: 3
-  },
-  //colors: ["#3F51B5", '#2196F3'],
+  // chart: {
+  //   height: 328,
+  //   type: 'line',
+  //   zoom: {
+  //     enabled: false
+  //   },
+  //   dropShadow: {
+  //     enabled: false,
+  //     top: 3,
+  //     left: 2,
+  //     blur: 4,
+  //     opacity: 1,
+  //   }
+  // },
+  // stroke: {
+  //   curve: 'smooth',
+  //   width: 3
+  // },
+  // //colors: ["#3F51B5", '#2196F3'],
+  // series: [{
+  //     name: "test",
+  //     data: [1, 15, 26, 20, 33, 27]
+  //   },
+  //   {
+  //     name: "test2",
+  //     data: [3, 33, 21, 42, 19, 32]
+  //   },
+  //   {
+  //     name: "test3",
+  //     data: [0, 39, 52, 11, 29, 43]
+  //   }
+  // ],
+  // subtitle: {
+  //   text: 'NVP',
+  //   offsetY: 15,
+  //   offsetX: 10
+  // },
+  // markers: {
+  //   strokeWidth: 0,
+  //   hover: {
+  //     size: 4
+  //   }
+  // },
+  // grid: {
+  //   show: false,
+  //   padding: {
+  //     bottom: 0
+  //   }
+  // },
+  // labels: ['2017', '2018', '2019', '2020', '2021', '2022'],
+  // colors:['#C1EAE3', '#FFA792', '#033135'],
+  // xaxis: {
+  //   tooltip: {
+  //     enabled: false
+  //   }
+  // },
+  // legend: {
+  //   position: 'top',
+  //   horizontalAlign: 'right',
+  //   offsetY: -20
+  // }
+
   series: [{
-      name: "test",
-      data: [1, 15, 26, 20, 33, 27]
-    },
-    {
-      name: "test2",
-      data: [3, 33, 21, 42, 19, 32]
-    },
-    {
-      name: "test3",
-      data: [0, 39, 52, 11, 29, 43]
-    }
-  ],
-  subtitle: {
-    text: 'NVP',
-    offsetY: 15,
-    offsetX: 10
-  },
-  markers: {
-    strokeWidth: 0,
-    hover: {
-      size: 4
-    }
-  },
-  grid: {
-    show: false,
-    padding: {
-      bottom: 0
-    }
-  },
-  labels: ['2017', '2018', '2019', '2020', '2021', '2022'],
-  colors:['#C1EAE3', '#FFA792', '#033135'],
-  xaxis: {
-    tooltip: {
-      enabled: false
-    }
-  },
-  legend: {
-    position: 'top',
-    horizontalAlign: 'right',
-    offsetY: -20
-  }
+          name: 'Tillbyggnation',
+          data: [44, 55, 41]
+        }, {
+          name: 'Ombyggnation',
+          data: [53, 32, 33]
+        }, {
+          name: 'Nybyggnation',
+          data: [12, 17, 11]
+        }],
+          chart: {
+          type: 'bar',
+          height: 350,
+          stacked: true,
+        },
+        plotOptions: {
+          bar: {
+            horizontal: true,
+          },
+        },
+        stroke: {
+          width: 0,
+        },
+        grid: {
+          show: false
+        },
+        colors:['#033135', '#FFA792', '#C1EAE3'],
+        xaxis: {
+          categories: [['Små', 'projekt', '0-10 mkr'], ['Mellan', 'projekt', '10-50 mkr'], ['Stora', 'projekt', '50- mkr']],
+          labels: {
+            formatter: function (val) {
+              return val 
+            }
+          }
+        },
+        yaxis: {
+          title: {
+            text: undefined
+          },
+        },
+        tooltip: {
+          y: {
+            formatter: function (val) {
+              return val 
+            }
+          }
+        },
+        fill: {
+          opacity: 1
+        },
+        legend: {
+          position: 'top',
+          horizontalAlign: 'right',
+          offsetX: -20
+        }
 }
 
 var chartLine = new ApexCharts(document.querySelector('#line-adwords'), optionsLine);
@@ -838,8 +1194,8 @@ var optionsCircle4 = {
     lineCap: 'round',
     colors: 'transparent',
   },
-  series: [30, 40, 10, 20],
-  labels: ['BI', 'B', 'RR', 'URB'],
+  series: [30, 35, 10, 15,10],
+  labels: ['BI', 'B', 'RR', 'URB', 'Övrigt'],
   legend: {
     show: true,
     floating: true,
@@ -848,7 +1204,7 @@ var optionsCircle4 = {
     offsetY: 210    
   },
   
-  colors:['#C1EAE3', '#FFA792', '#033135', '#ffffff2c']
+  colors:['#C1EAE3', '#FFA792', '#033135', '#ffffff2c', '#fff']
 }
 
 var chartCircle4 = new ApexCharts(document.querySelector('#radialBarBottom'), optionsCircle4);
@@ -894,43 +1250,40 @@ var chartBar = new ApexCharts(
 chartBar.render();
 
 var optionsArea = {
+  series: [{
+          name: 'URB',
+          data: [44, 55, 41, 20, 35]
+        },{
+          name: 'RR',
+          data: [44, 55, 41, 20, 35]
+        },  {
+          name: 'B',
+          data: [53, 32, 33, 40, 25]
+        }, {
+          name: 'BI',
+          data: [12, 17, 11, 15, 8]
+        }, {
+          name: 'Övrigt',
+          data: [12, 17, 11, 15, 8]
+        }],
   chart: {
     height: 380,
-    type: 'area',
-    stacked: false,
+    type: 'bar',
+    stacked: true,
   },
   stroke: {
-    curve: "smooth",
-    width: 2
-  },
-  series: [{
-      name: "BI",
-      data: [11, 15, 26, 20, 33]
-    },
-    {
-      name: "URB",
-      data: [32, 33, 21, 42, 19]
-    },
-    {
-      name: "B",
-      data: [20, 39, 52, 11, 29]
-    },
-    {
-      name: "MA",
-      data: [10, 05, 60, 10, 39]
-    }
-  ],
-  colors:['#C1EAE3', '#FFA792', '#033135', '#ffffff2c'],
+          width: 0,
+        },
+  colors:['#C1EAE3', '#FFA792', '#033135', '#ffffff2c', '#fff'],
   xaxis: {
-    categories: ['2018', '2019', '2020', '2021', '2022'],
-  },
-  tooltip: {
-    followCursor: true
+    categories: ['2021 Q1', '2021 Q2', '2021 Q3', '2021 Q4', '2022 Q1'],
   },
   fill: {
     opacity: 1,
   },
-
+  grid: {
+    show: false
+  }
 }
 
 var chartArea = new ApexCharts(
