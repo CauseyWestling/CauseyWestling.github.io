@@ -37,11 +37,10 @@
     <p class="" style="color: #04292c !important; font-size: 1rem; padding-left: 10px; cursor: pointer;">Causeywestling / Skolfastigheter AB / Fastighet 1</p>
     <input type="text" class="form-control form-control-sm live-search-box" placeholder="Sök här..." />
     <ul class="list-group list-group-flush live-search-list">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Morbi leo risus</li>
-        <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li>
+        <li class="list-group-item">Projektnr. 123 Ombyggnation plan 1</li>
+        <li class="list-group-item">Projektnr. 234 Renovering trapphus</li>
+        <li class="list-group-item">Projektnr. 345 Tillbyggnation skärmtak</li>
+        <li class="list-group-item">Projektnr. 567 Hg anpassning - interntrappa</li>
     </ul>
     <!-- <ul id="progressbar">
       <li class="active">Fastighet</li>
@@ -96,7 +95,7 @@
                   <div class="box box2 h-100">
                     <div class="details">
                       <h3 class="value" akhi="15">0</h3>
-                      <h4>Företag</h4>
+                      <h4>Bolag</h4>
                     </div>
                     <div class="svg-div">
                       <svg version="1.1" class="svg"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -209,14 +208,14 @@
               
               <div class="row mt-4">
                 <div class="col-md-5">
-                  <div class="box shadow mt-4">
+                  <div class="box shadow mt-4 h-100">
                     <p class="text-white m-0">Klassificering</p>
                     <div id="radialBarBottom" class=""></div>
                     <div style="height: 16px;"></div>
                   </div>
                 </div>
                 <div class="col-md-7">
-                  <div class="box shadow mt-4">
+                  <div class="box shadow mt-4 h-100">
                     <p class="text-white m-0">Projekt</p>
                     <div id="line-adwords"></div>
                   </div>
@@ -225,10 +224,10 @@
   
               <div class="row mt-4">
                 <div class="col-md-5">
-                  <div class="box shadow mt-4">
+                  <div class="box shadow mt-4 h-100">
                     <ul class="tab-group">
                       <li class="tab active"><a href="#signup">Senaste färdigställda projekt</a></li>
-                      <li class="tab"><a href="#login">senaste
+                      <li class="tab"><a href="#login">Senaste
                         inkomna projekt</a></li>
                     </ul>
                     <!-- <p class="text-white m-0">Senaste färdigställda projekt</p> -->
@@ -242,15 +241,19 @@
                       <tbody>
                         <tr>
                           <th scope="row">1</th>
-                          <td>Mark</td>
+                          <td>Projektnr. 123 Ombyggnation plan 1</td>
                         </tr>
                         <tr>
                           <th scope="row">2</th>
-                          <td>Jacob</td>
+                          <td>Projektnr. 234 Renovering trapphus</td>
                         </tr>
                         <tr>
                           <th scope="row">3</th>
-                          <td>Larry the Bird</td>
+                          <td>Projektnr. 345 Tillbyggnation skärmtak</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">4</th>
+                          <td>Projektnr. 567 Hg anpassning - interntrappa</td>
                         </tr>
                       </tbody>
                     </table>
@@ -274,7 +277,7 @@
                   </div>
                 </div>
                 <div class="col-md-7">
-                  <div class="box shadow mt-4">
+                  <div class="box shadow mt-4 h-100">
                     <p class="text-white m-0">Klassificering per kvartal</p>
                     <div id="areachart"></div>
                   </div>
@@ -1136,7 +1139,7 @@ var optionsLine = {
         },
         colors:['#033135', '#FFA792', '#C1EAE3'],
         xaxis: {
-          categories: [['Små', 'projekt', '0-10 mkr'], ['Mellan', 'projekt', '10-50 mkr'], ['Stora', 'projekt', '50- mkr']],
+          categories: ['0-10 mkr','10-50 mkr', '50- mkr'],
           labels: {
             formatter: function (val) {
               return val 
@@ -1171,7 +1174,7 @@ chartLine.render();
 var optionsCircle4 = {
   chart: {
     type: 'donut',
-    height: 350,
+    height: 360,
     width: 420,
   },
   plotOptions: {
