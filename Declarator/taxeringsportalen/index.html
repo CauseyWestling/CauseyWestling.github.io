@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxeringsportalen</title>
+    <script src="content/JS/jquery-3.6.0.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="content/CSS/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="content/CSS/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="content/CSS/style.css" rel="stylesheet">
+    <link href="content/CSS/Site.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+</head>
+<style>
+    body {
+        /* background-image: url(https://www.causeywestling.com/wp-content/uploads/Startsida_1600.jpg) !important; */
+        background-image: url(https://www.causeywestling.com/wp-content/uploads/pexels-brett-sayles-5323853-1600x1065.jpg) !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-attachment: fixed;
+    }
+    .select2-selection--single {
+              border: 1px solid #ced4da !important;
+              font-size: .75rem !important;
+              /*border-radius: 4px;*/
+          }
+  
+          .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+              background-color: #033135 !important;
+          }
+  
+          .select2-results__option {
+              font-size: .75rem !important;
+          }
+  
+          .select2-dropdown {
+              border: 1px solid #ced4da !important;
+          }
+          .date {
+            float: left;
+            text-align: center;
+            text-transform: uppercase;
+            }
+        
+            .eventdate {
+            font-weight: 300;
+            margin-right: 5px;
+            }
+            
+            .day {
+                font-size: 2.2em;
+                font-weight: 100;
+            
+            }  
+            .month {
+            font-weight: 900;
+                font-size: 1.6em;
+            }
+        
+            .year,
+            .time {
+                font-size: .9em;
+                font-weight: 400;
+            }
+    
+  
+  
+</style>
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark cw-bg-dark scrolling-navbar">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand waves-effect" href="#">
+                <img src="content/img/CauseyWestling_Symbol_Ljus-Grön_RGB.png" style="max-height: 30px !important; padding-right: 5px;" />
+                <strong class="cw-light text-uppercase"><strong>-</strong> Taxeringsportalen</strong>
+            </a>
+
+            <!-- Collapse -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Right -->
+                <ul class="navbar-nav ml-auto">
+
+                </ul>
+            </div>
+        </div>
+    </nav>    
+
+    <div class="container-fluid body-content rightCanvasWideTree  pt-3 rightCanvasTree-sm">
+        <div id="rightCanvas">
+            <main class="mt-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <table class="table table-borderless mt-3">
+                                <thead class="cw-bg-dark cw-light">
+                                    <tr>
+                                        <th>Fastighetsägare</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-light">
+                                        <td>Bolag 1</td>
+                                    </tr>
+                                    <tr class="table-light">
+                                        <td>Bolag 2</td>
+                                    </tr>
+                                    <tr class="table-light">
+                                        <td>Bolag 3</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <input type="button" class="btn btn-primary btn-sm mb-5" value="Nytt bolag" />
+                        </div>
+                        <div class="col-md-6">
+                            <div class=" mt-3">
+                                <h4 class="cw-dark">
+                                    <strong>Fastigheter</strong>
+                                </h4>
+                            </div>
+                            <select class="select2" style="width: 100%;" id="property">
+                                <option></option>
+                                <option value="1">Fastighet 1</option>
+                                <option value="2">Fastighet 2</option>
+                                <option value="3">Fastighet 3</option>
+                                <option value="4">Fastighet 4</option>
+                                <option value="5">Fastighet 5</option>
+                            </select>
+                            <table class="table table-borderless mt-3">
+                                <thead class="cw-bg-dark cw-light">
+                                    <tr>
+                                        <th>Händelser</th>
+                                        <th style="width: 120px;"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-light">
+                                        <td>Fastighet 1 deklarerad</td>
+                                        <td class="text-nowrap text-center">
+                                            2022-05-23
+                                        </td>
+                                    </tr>
+                                    <tr class="table-light">
+                                        <td>Fastighet 2 avveckling</td>
+                                        <td class="text-nowrap text-center">
+                                            2022-05-21
+                                        </td>
+                                    </tr>
+                                    <tr class="table-light">
+                                        <td>Fastighet 1 invesering</td>
+                                        <td class="text-nowrap text-center">
+                                            2022-05-20
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mt-3">
+                                <h4 class="text-white">
+                                    <strong>Kommande händerlser</strong>
+                                </h4>
+                            </div>
+                            <div class="row">
+                                <!-- <div class="cw-bg-dark cw-light text-center" style="width: 150px;">
+                                    <p>6</p>
+                                    <p>Jun</p> -->
+                                    <!-- <time datetime="2015-06-06">
+                                        <span class="day eventdate">6</span><br>
+                                        <span class="month eventdate">Jun</span><br>
+                                        <span class="year eventdate">2015</span>
+                                      </time> -->
+                                <!-- </div>
+                                <div class="table-light">
+                                    tes
+                                </div> -->
+                                <div class="col-md-2 mb-2">
+                                    <div class="col-md-12 py-2 cw-bg-dark cw-light">
+                                        <div class="row">
+                                            <div class="col-md-6 text-right align-top pr-1">
+                                                <p class="mb-0 align-top" style="font-size: 2.5rem;">18</p>
+                                            </div>
+                                            <div class="col-md-6 align-top pl-1">
+                                                <p class="m-0 pt-2 align-top">JUN</p>
+                                                <p class="m-0 align-top" style="font-size: .7rem;">2022</p>
+                                            </div>
+                                        </div>
+                                        <p class="card-text m-0" style="font-size: 0.7rem;">Bolag 1 - Fastighet 5</p>
+                                        <p class="m-0">Deklaration</p> 
+                                    </div>                                                                     
+                                </div>
+                                <div class="col-md-2 mb-2">
+                                    <div class="col-md-12 py-2 cw-bg-dark cw-light">
+                                        <div class="row">
+                                            <div class="col-md-6 text-right align-top pr-1">
+                                                <p class="mb-0 align-top" style="font-size: 2.5rem;">21</p>
+                                            </div>
+                                            <div class="col-md-6 align-top pl-1">
+                                                <p class="m-0 pt-2 align-top">SEP</p>
+                                                <p class="m-0 align-top" style="font-size: .7rem;">2022</p>
+                                            </div>
+                                        </div>
+                                        <p class="card-text m-0" style="font-size: 0.7rem;">Bolag 1 - Fastighet 7</p>
+                                        <p class="m-0">Deklaration</p> 
+                                    </div>                                                                     
+                                </div>
+                                <div class="col-md-2 mb-2">
+                                    <div class="col-md-12 py-2 cw-bg-dark cw-light">
+                                        <div class="row">
+                                            <div class="col-md-6 text-right align-top pr-1">
+                                                <p class="mb-0 align-top" style="font-size: 2.5rem;">11</p>
+                                            </div>
+                                            <div class="col-md-6 align-top pl-1">
+                                                <p class="m-0 pt-2 align-top">AUG</p>
+                                                <p class="m-0 align-top" style="font-size: .7rem;">2022</p>
+                                            </div>
+                                        </div>
+                                        <p class="card-text m-0" style="font-size: 0.7rem;">Bolag 12 - Fastighet 1</p>
+                                        <p class="m-0">Deklaration</p> 
+                                    </div>                                                                     
+                                </div>
+                                <div class="col-md-2 mb-2">
+                                    <div class="col-md-12 py-2 cw-bg-dark cw-light">
+                                        <div class="row">
+                                            <div class="col-md-6 text-right align-top pr-1">
+                                                <p class="mb-0 align-top" style="font-size: 2.5rem;">29</p>
+                                            </div>
+                                            <div class="col-md-6 align-top pl-1">
+                                                <p class="m-0 pt-2 align-top">OCT</p>
+                                                <p class="m-0 align-top" style="font-size: .7rem;">2022</p>
+                                            </div>
+                                        </div>
+                                        <p class="card-text m-0" style="font-size: 0.7rem;">Bolag 5 - Fastighet 1</p>
+                                        <p class="m-0">Deklaration</p> 
+                                    </div>                                                                     
+                                </div>
+                                <div class="col-md-2 mb-2">
+                                    <div class="col-md-12 py-2 cw-bg-dark cw-light">
+                                        <div class="row">
+                                            <div class="col-md-6 text-right align-top pr-1">
+                                                <p class="mb-0 align-top" style="font-size: 2.5rem;">12</p>
+                                            </div>
+                                            <div class="col-md-6 align-top pl-1">
+                                                <p class="m-0 pt-2 align-top">NOV</p>
+                                                <p class="m-0 align-top" style="font-size: .7rem;">2022</p>
+                                            </div>
+                                        </div>
+                                        <p class="card-text m-0" style="font-size: 0.7rem;">Bolag 1 - Fastighet 5</p>
+                                        <p class="m-0">Deklaration</p> 
+                                    </div>                                                                     
+                                </div>
+                                <div class="col-md-2 mb-2">
+                                    <div class="col-md-12 py-2 cw-bg-dark cw-light">
+                                        <div class="row">
+                                            <div class="col-md-6 text-right align-top pr-1">
+                                                <p class="mb-0 align-top" style="font-size: 2.5rem;">29</p>
+                                            </div>
+                                            <div class="col-md-6 align-top pl-1">
+                                                <p class="m-0 pt-2 align-top">DEC</p>
+                                                <p class="m-0 align-top" style="font-size: .7rem;">2022</p>
+                                            </div>
+                                        </div>
+                                        <p class="card-text m-0" style="font-size: 0.7rem;">Bolag 2 - Fastighet 1</p>
+                                        <p class="m-0">Deklaration</p> 
+                                    </div>                                                                     
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- script -->
+    <script src="content/JS/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="content/JS/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script src="content/JS/mdb.min.js"></script>
+    <!-- Your custom scripts (optional) -->
+    <script type="text/javascript">
+        new WOW().init();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".caret").click(function () {
+                $(this).parent().children('.nested').each(function () {
+                    $(this).toggleClass("active");
+                });
+                $(this).toggleClass('caret-down');
+            });
+        });
+        // Collapse tree function
+        $(document).ready(function () {
+            $(".toggleTreeBtn").click(function () {
+                $("#showTreeBtn, .rightCanvasWideTree, .treeSidePanel").toggleClass('toggleSidebar');
+            });
+        });
+
+        $(document).ready(function () {
+              $("#property").attr(
+                  "data-placeholder", "Sök bland fastigheter"
+              );
+          });
+
+          $(document).ready(function () {
+              $('.select2').select2({
+                  language: {
+                      errorLoading: function () {
+                          return 'Resultat kunde inte laddas.';
+                      },
+                      inputTooLong: function (args) {
+                          var overChars = args.input.length - args.maximum;
+  
+                          var message = 'Vänligen sudda ut ' + overChars + ' tecken';
+  
+                          return message;
+                      },
+                      inputTooShort: function (args) {
+                          var remainingChars = args.minimum - args.input.length;
+  
+                          var message = 'Vänligen skriv in ' + remainingChars +
+                              ' eller fler tecken';
+  
+                          return message;
+                      },
+                      loadingMore: function () {
+                          return 'Laddar fler resultat…';
+                      },
+                      maximumSelected: function (args) {
+                          var message = 'Du kan max välja ' + args.maximum + ' element';
+  
+                          return message;
+                      },
+                      noResults: function () {
+                          return 'Inga träffar';
+                      },
+                      searching: function () {
+                          return 'Söker…';
+                      },
+                      removeAllItems: function () {
+                          return 'Ta bort alla objekt';
+                      }
+                  },
+                  escapeMarkup: function (markup) {
+                      return markup;
+                  },
+              });
+          });
+    </script>
+</body>
+</html>

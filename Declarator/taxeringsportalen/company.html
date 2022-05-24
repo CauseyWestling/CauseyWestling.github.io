@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxeringsportalen</title>
+    <script src="content/JS/jquery-3.6.0.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="content/CSS/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="content/CSS/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="content/CSS/style.css" rel="stylesheet">
+    <link href="content/CSS/Site.css" rel="stylesheet" />
+</head>
+<style>
+    body {
+        background-image: url(https://www.causeywestling.com/wp-content/uploads/pexels-brett-sayles-5323853-1600x1065.jpg) !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-attachment: fixed;
+    }
+</style>
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark cw-bg-dark scrolling-navbar">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand waves-effect" href="#">
+                <img src="content/img/CauseyWestling_Symbol_Ljus-Grön_RGB.png" style="max-height: 30px !important; padding-right: 5px;" />
+                <strong class="cw-light text-uppercase"><strong>-</strong> Taxeringsportalen</strong>
+            </a>
+
+            <!-- Collapse -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Right -->
+                <ul class="navbar-nav ml-auto">
+
+                </ul>
+            </div>
+        </div>
+    </nav>    
+    <div class="container-fluid body-content rightCanvasWideTree  pt-3 rightCanvasTree-sm">
+        <div id="rightCanvas">
+            <main class="mt-5 pt-3">
+                <div class="container">
+                    <div class="text-center mt-3">
+                        <h3 class="cw-dark">
+                            <strong>Bolag 1</strong>
+                        </h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-borderless mt-5">
+                                <thead class="cw-bg-dark cw-light">
+                                    <tr>
+                                        <th>Fastighetsbeteckning</th>
+                                        <th style="width: 120px;">Ändra | Ta bort</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-light">
+                                        <td>Fastighet 1</td>
+                                        <td class="text-nowrap text-center">
+                                            <a href="#" data-id="@item.Id"><i class="fas fa-edit"></i></a>
+                                            <a href="#"><i class="far fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-light">
+                                        <td>Fastighet 2</td>
+                                        <td class="text-nowrap text-center">
+                                            <a href="#" data-id="@item.Id"><i class="fas fa-edit"></i></a>
+                                            <a href="#"><i class="far fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-light">
+                                        <td>Fastighet 3</td>
+                                        <td class="text-nowrap text-center">
+                                            <a href="#" data-id="@item.Id"><i class="fas fa-edit"></i></a>
+                                            <a href="#"><i class="far fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <input type="button" class="btn btn-primary btn-sm mb-5" value="Ny fastighet" />
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- script -->
+    <script src="content/JS/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="content/JS/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script src="content/JS/mdb.min.js"></script>
+    <!-- Your custom scripts (optional) -->
+    <script type="text/javascript">
+        new WOW().init();
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".caret").click(function () {
+                $(this).parent().children('.nested').each(function () {
+                    $(this).toggleClass("active");
+                });
+                $(this).toggleClass('caret-down');
+            });
+        });
+        // Collapse tree function
+        $(document).ready(function () {
+            $(".toggleTreeBtn").click(function () {
+                $("#showTreeBtn, .rightCanvasWideTree, .treeSidePanel").toggleClass('toggleSidebar');
+            });
+        });
+    </script>
+</body>
+</html>

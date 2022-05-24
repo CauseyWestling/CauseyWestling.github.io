@@ -1,0 +1,311 @@
+﻿
+body {
+    background-color: #C1EAE3 !important;
+}
+
+.cw-bg-dark {
+    background-color: #033135 !important;
+}
+
+.cw-bg-light {
+    background-color: #C1EAE3 !important;
+}
+
+.cw-bg-coral {
+    background-color: #FFA792 !important;
+}
+
+.cw-dark {
+    color: #033135 !important;
+}
+
+.cw-light {
+    color: #C1EAE3 !important;
+}
+.nav-hover:hover {
+    color:#9dc4be  !important;
+}
+
+.cw-coral {
+    color: #FFA792 !important;
+}
+
+
+/* Color update to CW colors */
+.text-primary {
+    color: #033135 !important;
+}
+
+a.text-primary {
+    color: #033135 !important;
+}
+
+.text-primary:hover {
+    color: #06444b !important;
+}
+
+i.text-primary:hover {
+    color: #06444b !important;
+}
+
+a.text-primary:hover {
+    color: #06444b !important;
+}
+
+.text-primary:active {
+    color: #06444b !important;
+}
+
+i.text-primary:active {
+    color: #06444b !important;
+}
+
+a.text-primary:active {
+    color: #06444b !important;
+}
+
+.text-primary:focus {
+    color: #06444b !important;
+}
+
+i.text-primary:focus {
+    color: #06444b !important;
+}
+
+a.text-primary:focus {
+    color: #06444b !important;
+}
+
+/**/
+.text-nav {
+    color: #b4dfd9 !important;
+}
+
+a.text-nav {
+    color: #b4dfd9 !important;
+}
+
+.text-nav:hover {
+    color: #A9CDC7 !important;
+}
+
+i.text-nav:hover {
+    color: #A9CDC7 !important;
+}
+
+a.text-nav:hover {
+    color: #A9CDC7 !important;
+}
+
+.text-nav:active {
+    color: #A9CDC7 !important;
+}
+
+i.text-nav:active {
+    color: #A9CDC7 !important;
+}
+
+a.text-nav:active {
+    color: #A9CDC7 !important;
+}
+
+.text-nav:focus {
+    color: #A9CDC7 !important;
+}
+
+i.text-nav:focus {
+    color: #A9CDC7 !important;
+}
+
+a.text-nav:focus {
+    color: #A9CDC7 !important;
+}
+
+.btn-primary {
+    background-color: #033135 !important;
+}
+
+    .btn-primary.dropdown-toggle {
+        background-color: #033135 !important;
+    }
+
+        .btn-primary.dropdown-toggle:hover {
+            background-color: #06444b !important;
+        }
+
+    .btn-primary:hover {
+        background-color: #06444b !important;
+    }
+
+    .btn-primary:disabled {
+        background-color: #06444b !important;
+    }
+
+    .btn-primary:active {
+        background-color: #06444b !important;
+    }
+
+    .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+        background-color: #06444b !important;
+        border-color: #005cbf
+    }
+
+/*Tree*/
+.tree-container {
+    overflow-y: auto !important;
+    overflow-x: auto !important;
+    height: calc(100vh - 235px);
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    margin-left: -6px !important;
+    padding-right: 12px !important;
+}
+
+.tree-btn-width {
+    width: 94.5% !important;
+    display: inline-block;
+}
+
+.tree-toggler > span {
+    font-size: 0.5em;
+    color: gray;
+}
+
+.tree-row {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.tree-btn {
+    background-color: inherit;
+}
+
+.tree-selected {
+    background-color: #C0CBCC;
+    font-weight: bold;
+}
+
+.tree-item {
+    padding-left: 6px;
+    white-space: nowrap;
+}
+
+ul.tree {
+    display: block;
+}
+
+li[aria-expanded=true] > .tree-row > .tree-toggler > .fa-caret-right {
+    display: none;
+}
+
+
+li[aria-expanded=false] > .tree-row > .tree-toggler > .fa-caret-down {
+    display: none;
+}
+
+/*sidebar*/
+
+.treeSidePanel {
+    height: 100%;
+    max-height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    -webkit-transition: left .3s ease;
+    transition: left .3s ease;
+}
+
+    .treeSidePanel.toggleSidebar {
+        left: 0px !important;
+    }
+
+.tree-sm {
+    width: 300px;
+    left: -300px;
+}
+
+.rightCanvasTree-lg {
+    -webkit-transition: padding-left .3s ease;
+    transition: padding-left .3s ease;
+    padding-left: 30px;
+}
+
+    .rightCanvasTree-lg.toggleSidebar {
+        padding-left: 480px;
+    }
+
+.rightCanvasTree-sm {
+    -webkit-transition: padding-left .3s ease;
+    transition: padding-left .3s ease;
+    padding-left: 30px;
+}
+
+    .rightCanvasTree-sm.toggleSidebar {
+        padding-left: 300px;
+    }
+
+#showTreeBtn {
+    position: fixed;
+    left: -8px;
+    top: 68px;
+    z-index: 8;
+    padding-left: 16px;
+    padding-right: 13px;
+    -webkit-transition: left .3s ease;
+    transition: left .3s ease;
+    transition-delay: .4s;
+}
+
+    #showTreeBtn.toggleSidebar {
+        left: -50px !important;
+    }
+
+#leftSectionTree {
+    overflow: hidden;
+    height: calc(100vh - 140px) !important;
+}
+
+/* Remove default bullets */
+ul, #myUL {
+    list-style-type: none;
+}
+
+/* Remove margins and padding from the parent ul */
+#myUL {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the caret/arrow */
+.caret {
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+}
+
+    /* Create the caret/arrow with a unicode, and style it */
+    .caret::before {
+        content: "\25B6";
+        color: black;
+        display: inline-block;
+        margin-right: 6px;
+    }
+
+/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+.caret-down::before {
+    transform: rotate(90deg);
+}
+
+/* Hide the nested list */
+.nested {
+    display: none;
+    padding-left: 20px!important;
+}
+
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.active {
+    display: block;
+}
